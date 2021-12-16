@@ -189,12 +189,15 @@ align-items: center;
         align-items: center;
         margin:10px;
         
+        
     
     }
     .sidebar_button{
         background-color: transparent;
         border-width: 1px;
         font-size: 17px;
+        color:white;
+        
     }
 
        
