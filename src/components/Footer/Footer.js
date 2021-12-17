@@ -17,7 +17,7 @@ const Footer=()=>{
 
                 <div className="footer-each-container">
                     <h3>Email</h3>
-                    <h4>sivaji8055@gmail.com</h4>
+                    <h4>ffti650@gmail.com</h4>
                 </div>
 
                 <div className="footer-each-container">
@@ -34,7 +34,10 @@ const Footer=()=>{
                 </div>
 
                 <div className="footer-dev-details-container">
-                    <h4>Contact Details</h4>
+                    <div>
+                          <h4>Contact Details</h4>
+                    </div>
+                  
                     <div>
                         <h5>damalokeshskht@gmail.com</h5>
                         <h5>yvishnuvardhan325@gmail.com</h5>

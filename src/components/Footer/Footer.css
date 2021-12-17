@@ -7,7 +7,6 @@
   background-color: #5c7183;
   box-sizing: border-box;
   height: fit-content;
-  margin-top:60px;
 }
 
 .footer-main-dev-contianer{
@@ -33,7 +32,7 @@
 }
 
 .footer-dev-container{
-  margin:0 40px;
+  margin:0 20px;
   width:80%;
   display: flex;
   justify-content:space-around;
@@ -44,10 +43,10 @@
 }
 
 .footer-each-container{
-  margin:5px 10px;
+  /* margin:5px 10px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   box-sizing: border-box;
   height:fit-content;

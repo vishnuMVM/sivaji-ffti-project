@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Management from './components/Management/Management'
+import PageFooter from "./components/PageFooter/PageFooter";
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
     <Route exact path="/" element={<Home />} />
     <Route exact path="/management" element={<Management />}/>
     </Routes>
-    <Footer />
+    {/* <Footer /> */}
+    <PageFooter />
     </BrowserRouter>
   );
 }
