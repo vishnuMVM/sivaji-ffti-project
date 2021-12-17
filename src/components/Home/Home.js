@@ -52,7 +52,7 @@ export default function Home() {
         <div className="collection-items">
           <img
             className="collection-img"
-            src="https://res.cloudinary.com/trunk-club/image/upload/f_auto,q_auto/Blog/19021_May_OutfitsForBodytypes_Blog_Inline_TCM_Rectangle_00.jpg"
+            src="https://m.media-amazon.com/images/S/stores-image-uploads-eu-prod/2/AmazonStores/A21TJRUUN4KGV/fee45aee048133490ecb49bb9787161d.w1080.h1080.jpg"
             alt="Casuals"
           ></img>
           <h4>Casuals</h4>
@@ -85,6 +85,37 @@ export default function Home() {
           ></img>
           <h4>Gym Wear</h4>
         </div>
+
+        <div className="collection-items">
+          <img
+            className="collection-img"
+            src="https://kingdoodle.com/wp-content/uploads/2021/04/Buy-custom-t-shirt-online-India.jpg"
+            alt="Customised Tshirts"
+          ></img>
+          <h4>Customised T-shirts</h4>
+        </div>
+
+        <div className="collection-items">
+          <img
+            className="collection-img"
+            src="https://i.pinimg.com/originals/03/22/47/0322471eb94d590669dd3ff28346cb13.jpg"
+            alt="Customised Tshirts"
+          ></img>
+          <h4>IPL T-shirts</h4>
+        </div>
+        
+        <div className="collection-items">
+          <img
+            className="collection-img"
+            src="https://m.media-amazon.com/images/I/71G4SzKa4-S._AC_UL1080_.jpg"
+            alt="Customised Tshirts"
+          ></img>
+          <h4>Casual T-shirts</h4>
+        </div>
+        
+
+
+
       </div>
     </div>
   );

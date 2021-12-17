@@ -33,11 +33,11 @@
 
 @media screen and (max-width:800px) {
   .collection-img{
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
   }
   h1{
-    font-size: large;
+    font-size: larger;
   }
 
 

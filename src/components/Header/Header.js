@@ -37,7 +37,7 @@ class Header extends Component{
                      <div>
                          <ul className="header-list-items-container">
                              <li><Link className="header-list-item" to="/">Home</Link></li>
-                             <li><Link className="header-list-item" to="/achivements">Achivements</Link></li>
+                             <li><Link className="header-list-item" to="/achievements">Achievements</Link></li>
                              <li><Link className="header-list-item" to="/grow-with-us">Grow with us</Link></li>
                              <li><Link className="header-list-item" to="/management">Management</Link></li>
                              <li><Link className="header-list-item" to="/storelocation">Store Location</Link></li>
