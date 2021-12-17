@@ -1,0 +1,114 @@
+
+.footer-main-contianer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  background-color: #5c7183;
+  box-sizing: border-box;
+  height: fit-content;
+  margin-top:60px;
+}
+
+.footer-main-dev-contianer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  background-color: #313B44;
+  box-sizing: border-box;
+  height: fit-content;
+}
+
+.footer-row-container{
+  margin:0 40px;
+  padding:25px 0;
+  width:80%;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  color:white;
+  background-color:transparent;
+  box-sizing: border-box;
+}
+
+.footer-dev-container{
+  margin:0 40px;
+  width:80%;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  color:white;
+  background-color:transparent;
+  box-sizing: border-box;
+}
+
+.footer-each-container{
+  margin:5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  height:fit-content;
+}
+.footer-dev-details-container{
+  margin:5px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  box-sizing: border-box;
+  height:fit-content;
+  width:320px;
+}
+.footer-image-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+.ma-img{
+  height:100%;
+  width:100px;
+  margin-right: 10px;
+}
+
+
+
+
+@media screen and (max-width:767px) {
+
+  
+.footer-main-contianer h3{
+  font-size:15px;
+}
+
+  
+.footer-main-contianer h4{
+  font-size:12px;
+}
+  .footer-row-container{
+      margin:20px 0px;
+      padding:15px 0;
+      width:80%;
+      display: flex;
+      flex-direction: column;
+      justify-content:space-around;
+      align-items: flex-start;
+      color:white;
+      background-color:transparent;
+      box-sizing: border-box;
+  }
+
+  .footer-dev-container{
+      margin:15px 0px;
+      width:80%;
+      display: flex;
+      flex-direction: column;
+      justify-content:space-around;
+      align-items: center;
+      color:white;
+      background-color:transparent;
+      box-sizing: border-box;
+  }
+}

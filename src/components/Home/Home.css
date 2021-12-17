@@ -1,0 +1,44 @@
+.carousel-Div{
+  padding-top:20px;
+  width:85%;
+}
+.carousel-Div img{
+  width: 100%;
+}
+
+.collections{
+
+  padding:50px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 50px;
+}
+.center {
+  margin: 0 auto;
+}
+
+
+.collection-img{
+  height: 300px;
+  width: 300px;
+}
+
+.collections h4{
+  text-align: center;
+}
+
+
+@media screen and (max-width:800px) {
+  .collection-img{
+    height: 200px;
+    width: 200px;
+  }
+  h1{
+    font-size: large;
+  }
+
+
+
+}
