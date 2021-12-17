@@ -1,0 +1,47 @@
+.management-main-container{
+    background-image: url("https://www.wallpapertip.com/wmimgs/168-1681153_best-art-wallpapers-wallpapers-hd-wide-website-background.jpg");
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    padding:40px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.owner-container{
+    background-color:white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height:220px;
+    width:60%;
+    box-shadow:2px 2px 5px 5px  white,-2px -2px 5px 5px white;
+    margin:40px;
+}
+.mng-pg-icon-container{
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+}
+
+@media screen and (max-width:767px){
+    .owner-container{
+        background-color:white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height:250px;
+        width:85%;
+        box-shadow:2px 2px 5px 5px  white,-2px -2px 5px 5px white;
+        margin:20px;
+        padding: 10px;
+    }
+    .management-main-container{
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcrNpoxIooqMcTG7_v2VpB3y6nFgbmy9qCwUf07NIoVKFluPEpRQf3WAomaa78qhn7LYI&usqp=CAU");
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        padding:40px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}

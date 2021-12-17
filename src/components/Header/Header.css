@@ -157,7 +157,8 @@ align-items: center;
         top: 0;
         bottom: 0;
         width:200px;
-        background-color: rgb(75, 71, 71);
+        background-color: black;
+        opacity: 0.94;
         transition:800ms ease-in-out;
         z-index: 1;
         
@@ -170,7 +171,7 @@ align-items: center;
         top: 0;
         bottom: 0;
         width:200px;
-        background-color:black;
+        background-color:rgb(100, 97, 97);
         transition:800ms ease-in-out;
         opacity: 0.6;
         z-index: 1;
