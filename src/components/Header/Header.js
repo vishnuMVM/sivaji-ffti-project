@@ -55,7 +55,7 @@ class Header extends Component{
                      </div>
                      <div className="sidebar-container">
                             <p> <Link className="header-list-item" to="/">Home </Link></p>
-                            <p> <Link className="header-list-item" to="/achivements">Achivements </Link></p>
+                            <p> <Link className="header-list-item" to="/achievements">Achivements </Link></p>
                             <p><Link className="header-list-item" to="/grow-with-us">Grow with us </Link></p>
                             <p> <Link className="header-list-item" to="/management">Management </Link></p>
                             <p> <Link className="header-list-item" to="/storelocation">Store Location </Link></p>
