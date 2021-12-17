@@ -158,9 +158,8 @@
             top: 0;
             bottom: 0;
             width:200px;
-            background-color: #94A3A9;
+            background-color: #5c7183;
             transition:800ms ease-in-out;
-            z-index: 1;
             
            
         }
@@ -174,7 +173,7 @@
             background-color:black;
             transition:800ms ease-in-out;
             opacity: 0.6;
-            z-index: 1;
+            
             
         }
         .sidebar-container{
@@ -183,6 +182,9 @@
             padding-bottom: 10px;
             align-items: center;
             height:400px;
+            z-index: 10;
+            position: absolute;
+
         }
         .sidebar_button_container{
             display: flex;

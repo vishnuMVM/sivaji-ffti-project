@@ -1,4 +1,6 @@
 .carousel-Div{
+  z-index: -1;
+  position: relative;
   padding-top:20px;
   width:85%;
 }
@@ -7,7 +9,6 @@
 }
 
 .collections{
-
   padding:50px;
   width: 80%;
   display: flex;
