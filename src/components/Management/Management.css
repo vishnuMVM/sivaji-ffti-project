@@ -1,47 +1,192 @@
 .management-main-container{
-    background-image: url("https://www.wallpapertip.com/wmimgs/168-1681153_best-art-wallpapers-wallpapers-hd-wide-website-background.jpg");
+    background-image: url("https://i.pinimg.com/736x/53/af/1a/53af1ad615ee4f38e482d77b84eacb44.jpg");
     height:100vh;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-    padding:40px;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 .owner-container{
-    background-color:white;
     display: flex;
-    justify-content: space-evenly;
+    justify-content:center;
     align-items: center;
-    height:220px;
+    height: fit-content;
     width:60%;
-    box-shadow:2px 2px 5px 5px  white,-2px -2px 5px 5px white;
-    margin:40px;
-}
-.mng-pg-icon-container{
-display: flex;
-justify-content: space-evenly;
-align-items: center;
+    margin:30px 0;
+    background-size: cover;
+    background-color: transparent;
+    box-shadow: 2px 2px 5px 5px black;
+    border-radius: 10px;
+    
 }
 
-@media screen and (max-width:767px){
-    .owner-container{
-        background-color:white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height:250px;
-        width:85%;
-        box-shadow:2px 2px 5px 5px  white,-2px -2px 5px 5px white;
-        margin:20px;
-        padding: 10px;
+.mng-img-container{
+height:220px;
+width:220px;
+margin-top: 10px;
+margin-bottom: 10px;
+margin-right: 40px;
+background-color: wheat;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.mng-img-container-m{
+    height:220px;
+    width:220px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    background-color: wheat;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 2;
     }
+.mng-owner-info{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+width:50%;
+}
+.mng-owner-info-m{
+    order: 1;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+width:50%;
+}
+
+.para-icons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+.para{
+    margin-right: 20px;
+    text-align: justify;
+    height:100px;
+    width:200px;
+}
+
+.mng-pg-icon-container{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.individual-icon-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+     }
+ .individual-icon{
+ margin-right: 5px;
+ }
+
+
+@media screen and (max-width:1050px){
     .management-main-container{
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcrNpoxIooqMcTG7_v2VpB3y6nFgbmy9qCwUf07NIoVKFluPEpRQf3WAomaa78qhn7LYI&usqp=CAU");
-        height:100vh;
+        background-image: url("https://i.pinimg.com/236x/09/cf/5d/09cf5d8a406b5bc88f40b442157ae6c9.jpg");
+        height:fit-content;
+        background-size: cover;
         display: flex;
         flex-direction: column;
-        padding:40px;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
+        padding:10px;
     }
+    .owner-container{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        height: fit-content;
+        width:80%;
+        padding:8px;
+        background-color: transparent;
+        box-shadow: 2px 2px 5px 5px black;
+        border-radius: 10px;
+        
+    }
+    .mng-img-container-m{
+        height:220px;
+        width:220px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 0px;
+        background-color: wheat;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 1;
+        }
+        .mng-img-container{
+            height:220px;
+            width:220px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 0px;
+            background-color: wheat;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+        .mng-owner-info-m{
+        order:2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:50%;
+        }
+        .mng-owner-info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width:50%;
+            }
+        .para-icons-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+        }
+        .para{
+            margin-right: 0px;
+            text-align: justify;
+            height:100px;
+            width:200px;
+        }
+        .mng-pg-icon-container{
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .individual-icon-container{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: fit-content;
+            margin-right:20px;
+             }
+             .individual-icon{
+                margin-right: 3px;
+                }
 }
