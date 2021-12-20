@@ -1,0 +1,56 @@
+.location-main-container{
+    background-image: url("https://www.pngplay.com/wp-content/uploads/2/World-Map-Transparent-Background.png");
+    height:fit-content;
+    background-size: cover;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.map-text-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: fit-content;
+    background-color: transparent;
+    width: 80%;
+    margin: 20px auto;
+}
+.map-container{
+    height: 400px;
+    width:65%;
+}
+
+.fct-map{
+height:100%;
+width:100%;
+box-shadow: 2px 2px 5px 5px black;
+
+}
+
+
+
+@media screen and (max-width:900px) {
+    .map-text-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        background-color: transparent;
+        width: 95%;
+        margin: 20px auto;
+        padding: 5px;
+    }
+
+    .map-container{
+        height: 300px;
+        width:85%;
+    }
+    .text-container{
+        margin-bottom: 20px;
+    }
+}
+

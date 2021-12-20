@@ -1,6 +1,6 @@
 .management-main-container{
     background-image: url("https://treasury-management.com/wp-content/uploads/2021/09/TMI-PIF-background.jpg");
-    height:100vh;
+    height:fit-content;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -20,13 +20,12 @@ p{
     display: flex;
     justify-content:center;
     align-items: center;
-    height: fit-content;
-    width:60%;
+    width:65%;
     margin:30px 0;
-    background-size: cover;
     background-color: transparent;
     box-shadow: 2px 2px 5px 5px #676565;
     border-radius: 10px;
+    padding: 20px 10px;
     
 }
 
@@ -62,32 +61,34 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
-width:50%;
+width:60%;
 }
 .mng-owner-info-m{
+   
     order: 1;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
 align-items: flex-start;
-width:50%;
+width:60%;
 }
 
 .para-icons-container{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width:100%;
+    
 }
 .para{
-    margin-right: 20px;
+    margin-right: 25px;
     text-align: justify;
-    height:100px;
-    width:200px;
+    height:fit-content;
+    width:70%;
 }
 
 .mng-pg-icon-container{
-    height: fit-content;
+  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,7 +136,7 @@ width:50%;
         width:220px;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-right: 0px;
+        margin-left: 0;
         background-color: wheat;
         border-radius: 50%;
         display: flex;
@@ -148,7 +149,7 @@ width:50%;
             width:220px;
             margin-top: 10px;
             margin-bottom: 10px;
-            margin-right: 0px;
+            margin-right: 0;
             background-color: wheat;
             border-radius: 50%;
             display: flex;
@@ -161,14 +162,14 @@ width:50%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width:50%;
+        width:80%;
         }
         .mng-owner-info{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width:50%;
+            width:80%;
             }
         .para-icons-container{
             display: flex;
@@ -176,12 +177,12 @@ width:50%;
             justify-content: center;
             align-items: center;
             height: fit-content;
+            width:120%;
         }
         .para{
-            margin-right: 0px;
-            text-align: center;
-            height:100px;
-            width:200px;
+            text-align: justify;
+            height:fitcontent;
+            width:85%;
         }
         .mng-pg-icon-container{
             height: fit-content;
@@ -195,9 +196,26 @@ width:50%;
             justify-content: flex-start;
             align-items: center;
             height: fit-content;
-            margin-right:20px;
+            margin-right:10px;
              }
              .individual-icon{
                 margin-right: 3px;
                 }
+}
+
+@media screen and (min-width:676px) and (max-width:1049px){
+    .mng-pg-icon-container{
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .individual-icon-container{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: fit-content;
+        margin-right:15px;
+         }
 }
