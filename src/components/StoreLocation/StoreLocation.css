@@ -29,6 +29,24 @@ width:100%;
 box-shadow: 2px 2px 5px 5px black;
 
 }
+.text-container{
+    margin-left: 30px;
+    text-align: left;
+}
+tr{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+h2{
+    text-decoration: underline;
+}
 
 
 
@@ -51,6 +69,8 @@ box-shadow: 2px 2px 5px 5px black;
     }
     .text-container{
         margin-bottom: 20px;
+        text-align: left;
+       
     }
 }
 

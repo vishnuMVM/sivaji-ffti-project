@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import "./Header.css";
 import { Component } from "react";
+import logo from "./logo.jpg";
 
 
 
@@ -23,11 +24,12 @@ class Header extends Component{
              <div className="header-container header-desktop">
                  <div className="header-image-container">
                      <div className="logo-container">
-                        company logo comes here
+                       <Link to="/"><img className="header-image" src={logo} alt="company logo"/></Link> 
                      </div>
 
                      <div>
                         <h1> FFTI</h1>
+                        <h3>Futures First Textiles India</h3>
                      </div>
 
                  </div>
@@ -65,11 +67,12 @@ class Header extends Component{
              <div className="header-container">
                  <div className="header-image-container">
                     <div className="logo-container">
-                        company logo 
+                    <Link to="/"> <img className="header-image" src={logo} alt="company logo"/></Link> 
                      </div>
 
                      <div>
                         <h1> FFTI</h1>
+                        <h3>Futures First Textiles India</h3>
                      </div>
                  </div>
          

@@ -1,11 +1,12 @@
 import React from 'react';
-import Content from '../Content';
+import "./GrowWithUs.css"
 
 export default function GrowWithUs (){
 
   return(
-
-    <Content />
+    <div className="gwu-main-container">
+  
+    </div>
 
   )
 
