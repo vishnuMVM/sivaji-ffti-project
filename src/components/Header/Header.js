@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import "./Header.css";
 import { Component } from "react";
-import logo from "./logo.jpg";
+import Logo from "./Logo.jpg";
 
 
 
@@ -24,7 +24,7 @@ class Header extends Component{
              <div className="header-container header-desktop">
                  <div className="header-image-container">
                      <div className="logo-container">
-                       <Link to="/"><img className="header-image" src={logo} alt="company logo"/></Link> 
+                       <Link to="/"><img className="header-image" src={Logo} alt="company logo"/></Link> 
                      </div>
 
                      <div>
@@ -67,7 +67,7 @@ class Header extends Component{
              <div className="header-container">
                  <div className="header-image-container">
                     <div className="logo-container">
-                    <Link to="/"> <img className="header-image" src={logo} alt="company logo"/></Link> 
+                    <Link to="/"> <img className="header-image" src={Logo} alt="company logo"/></Link> 
                      </div>
 
                      <div>

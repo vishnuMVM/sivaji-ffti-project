@@ -7,7 +7,7 @@ export default function GrowWithUs (){
     <div className="gwu-main-container">
       <div>
       <p className="gwu-text">
-        FFTI will always be there to encourage talented aspirants<br/>
+        FFTI will always be there to encourage talented aspirants
         FFTI have heard several stories of franchisors of its own 
         who have been successful in their business, you can also be one of them or top of them if you join with us.
       </p>

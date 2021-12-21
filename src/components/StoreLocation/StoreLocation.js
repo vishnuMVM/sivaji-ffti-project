@@ -26,8 +26,7 @@ export default function StoreLocation (){
         </div>
 
         <div className="map-container">
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1927.8084158552633!2d78.00796595563664!3d14.9026890896106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3bb41cad4e9d4e6d%3A0xe285e252095f27b1!2sKrishna%20Puram%2C%20Tadipatri%2C%20Andhra%20Pradesh%20515411!3m2!1d14.9026891!2d78.0090603!5e0!3m2!1sen!2sin!4v1640017430122!5m2!1sen!2sin" 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1927.8208891356282!2d78.00651661437422!3d14.901296041980057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb41cad7c45a549%3A0x662924e0923191d4!2sKrishna%20Puram%2C%20Tadipatri%2C%20Andhra%20Pradesh%20515411!5e0!3m2!1sen!2sin!4v1640072765521!5m2!1sen!2sin"
         className="fct-map" allowfullscreen="" loading="lazy" title="officelocation"></iframe>
 
         
