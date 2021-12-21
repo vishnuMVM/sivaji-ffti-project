@@ -4,7 +4,7 @@
     padding:6px 0;
     justify-content: space-around;
     background-color:#313B44;
-    height:100px;
+    height:110px;
     box-sizing: border-box;
     align-items: center;
     }
@@ -23,7 +23,7 @@
     
     .logo-container{
         height:100%;
-        width:40%;
+        width:30%;
         margin-right: 8px;
         
     }
@@ -238,7 +238,7 @@
             }
             .logo-container{
                 height:100%;
-                width:120px;
+                width:100px;
                 margin-right: 8px;
                 
             }

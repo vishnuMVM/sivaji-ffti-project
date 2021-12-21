@@ -1,19 +1,22 @@
 .gwu-main-container{
     background-image: url("https://franchiseperformancegroup.com/wp-content/uploads/2018/01/Franchisors-Grow-Featured.jpg");
-    height: 100vh;
+    height: fit-content;
     background-size: cover;
 }
 .gwu-text{
-    text-align: center;
+    text-align: justify;
    font-size: 20px;
    font-weight: bold;
    width:65%;
    margin: 30px auto;
-   padding: 30px 0px;
+   padding: 30px;
    color:black;
    background-color: white;
    border-radius: 10px;
    box-shadow: 2px 2px 4px 4px gray;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
 }
 .franchise-main-container{
@@ -25,6 +28,7 @@
     width:90%;
     padding: 10px;
     margin: 10px auto;
+    text-align: justify;
 }
 .franchise-ind-container{
     display: flex;
@@ -56,10 +60,51 @@
 
 
 
+
 @media screen and (max-width:900px) {
     .gwu-main-container{
         background-image: url("https://st2.depositphotos.com/1014014/7033/i/950/depositphotos_70333233-stock-photo-franchise-business-network-diagram-sign.jpg");
-        height: 100vh;
+        height: fit-content;
         background-size: cover;
+    }
+    .gwu-text{
+        text-align: justify;
+       font-size: 20px;
+       font-weight: bold;
+       width:85%;
+       margin: 30px auto;
+       padding: 30px;
+       color:black;
+       background-color: white;
+       border-radius: 10px;
+       box-shadow: 2px 2px 4px 4px gray;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    
+    }
+    .franchise-ind-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width:300px;
+        background-color: white;
+        border-radius: 10px;
+        margin:10px;
+        box-shadow: 2px 2px 4px 4px gray;
+       
+    }
+    .franchise-main-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: fit-content;
+        width:90%;
+        padding: 10px;
+        margin: 10px auto;
+        text-align: justify;
     }
 }
