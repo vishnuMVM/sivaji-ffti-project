@@ -2,6 +2,22 @@
     background-image: url("https://franchiseperformancegroup.com/wp-content/uploads/2018/01/Franchisors-Grow-Featured.jpg");
     height: fit-content;
     background-size: cover;
+    box-sizing: border-box;
+    padding: 5px;
+}
+marquee {
+    font-size: 1.7em;
+    color: white;
+    word-spacing: 5px;
+    font-family: Arial;
+    font-weight: bold;
+    width:65%;
+    }
+.top-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .gwu-text{
     text-align: justify;
@@ -36,16 +52,17 @@
     justify-content: center;
     align-items: center;
     height: fit-content;
-    width:400px;
+    width:350px;
     background-color: white;
     border-radius: 10px;
-    margin:10px;
+    margin:20px;
     box-shadow: 2px 2px 4px 4px gray;
+    box-sizing: border-box;
    
 }
 .store-img{
-    width:75%;
-    height:60%;
+    width:85%;
+    height:70%;
     border-radius: 10px;
     margin-top:20px;
 }
@@ -56,14 +73,55 @@
 }
 
 
-
-
-
-
+@media screen and (min-width:901px) and (max-width:1200px){
+    .gwu-main-container{
+        background-image: url("https://franchiseperformancegroup.com/wp-content/uploads/2018/01/Franchisors-Grow-Featured.jpg");
+        height: fit-content;
+        background-size: cover;
+        box-sizing: border-box;
+    }
+    .gwu-text{
+        text-align: justify;
+       font-size: 20px;
+       font-weight: bold;
+       width:85%;
+       margin: 30px auto;
+       padding: 30px;
+       color:black;
+       background-color: white;
+       border-radius: 10px;
+       box-shadow: 2px 2px 4px 4px gray;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    
+    }
+    .franchise-ind-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width:300px;
+        background-color: white;
+        border-radius: 10px;
+        margin:20px;
+        box-shadow: 2px 2px 4px 4px gray;
+       
+    }
+    marquee {
+        font-size: 1.2em;
+        color: white;
+        word-spacing: 5px;
+        font-family: Arial;
+        font-weight: bold;
+        width:85%;
+        }
+}
 
 @media screen and (max-width:900px) {
     .gwu-main-container{
-        background-image: url("https://st2.depositphotos.com/1014014/7033/i/950/depositphotos_70333233-stock-photo-franchise-business-network-diagram-sign.jpg");
+        background-image: url("https://franchiseperformancegroup.com/wp-content/uploads/2018/01/Franchisors-Grow-Featured.jpg");
         height: fit-content;
         background-size: cover;
     }
@@ -92,7 +150,7 @@
         width:300px;
         background-color: white;
         border-radius: 10px;
-        margin:10px;
+        margin:20px;
         box-shadow: 2px 2px 4px 4px gray;
        
     }
@@ -107,4 +165,12 @@
         margin: 10px auto;
         text-align: justify;
     }
+    marquee {
+        font-size: 1em;
+        color: white;
+        word-spacing: 5px;
+        font-family: Arial;
+        font-weight: bold;
+        width:85%;
+        }
 }
