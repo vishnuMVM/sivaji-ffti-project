@@ -1,0 +1,61 @@
+
+.carousel-Div{
+  z-index: -1;
+  position: relative;
+  padding-top:20px;
+  width:85%;
+}
+.carousel-Div img{
+  width: 100%;
+}
+
+.collections{
+  padding:50px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 50px;
+}
+.center {
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+}
+
+
+.collection-img{
+  height: 300px;
+  width: 300px;
+}
+
+.collections h4{
+  text-align: center;
+}
+
+.collection-items{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.my-btn {
+  width: max-content;
+  height: max-content;
+  background-color: #313B44;
+  color: white;
+  font-size: large;
+  padding: 5px;
+}
+
+@media screen and (max-width:800px) {
+  .collection-img{
+    height: 250px;
+    width: 250px;
+  }
+  h1{
+    font-size: larger;
+  }
+
+
+
+}

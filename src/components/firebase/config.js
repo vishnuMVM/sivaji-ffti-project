@@ -16,14 +16,24 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, on
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAtrZrq_IkaihA5D9WKgMHpQ5jTFN4AHb0",
-  authDomain: "shivaji-ffti-sports.firebaseapp.com",
-  projectId: "shivaji-ffti-sports",
-  databaseURL:"https://console.firebase.google.com/project/shivaji-ffti-sports/storage/shivaji-ffti-sports.appspot.com/files",
-  storageBucket: "shivaji-ffti-sports.appspot.com",
-  messagingSenderId: "1044881636434",
-  appId: "1:1044881636434:web:f085aca84189003545f38b",
-  measurementId: "G-2L4MX3GPNL"
+  // apiKey: "AIzaSyAtrZrq_IkaihA5D9WKgMHpQ5jTFN4AHb0",
+  // authDomain: "shivaji-ffti-sports.firebaseapp.com",
+  // projectId: "shivaji-ffti-sports",
+  // databaseURL:"https://console.firebase.google.com/project/shivaji-ffti-sports/storage/shivaji-ffti-sports.appspot.com/files",
+  // storageBucket: "shivaji-ffti-sports.appspot.com",
+  // messagingSenderId: "1044881636434",
+  // appId: "1:1044881636434:web:f085aca84189003545f38b",
+  // measurementId: "G-2L4MX3GPNL"
+
+
+  apiKey: "AIzaSyBzSEFvoyQOj-RHhJ_6Qlm3wXM1_z5sbUs",
+  authDomain: "lokesh-vishnu-consignment.firebaseapp.com",
+  projectId: "lokesh-vishnu-consignment",
+  databaseURL : "gs://lokesh-vishnu-consignment.appspot.com",
+  storageBucket: "lokesh-vishnu-consignment.appspot.com",
+  messagingSenderId: "367203566547",
+  appId: "1:367203566547:web:ad24b565e03984393da526",
+  measurementId: "G-DG3RRRX6Y8"
 };
 
 // Initialize Firebase

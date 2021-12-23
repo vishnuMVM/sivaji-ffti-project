@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-carousel-responsive";
 import "react-carousel-responsive/dist/styles.css";
+import CollectionsDiv from "../CollectionsDiv";
 import "./Home.css";
 
 export default function Home() {
@@ -34,8 +35,9 @@ export default function Home() {
       </div>
 
       {/*-------Collections Div --------*/}
+      <CollectionsDiv />
 
-      <div className="center" style={{ width: "100%", textAlign: "center" }}>
+      {/* <div className="center" style={{ width: "100%", textAlign: "center" }}>
         <h1> Our Collections </h1>
       </div>
 
@@ -116,7 +118,7 @@ export default function Home() {
 
 
 
-      </div>
+      </div> */}
     </div>
   );
 }

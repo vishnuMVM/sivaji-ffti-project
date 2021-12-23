@@ -1,0 +1,31 @@
+.categories-div{
+  background-color: #c9c7d3;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+
+}
+
+.sidebar-categories{
+  background-color: #727176;
+
+}
+.gallery-view{
+
+
+}
+.sidebar-items {
+  width: 100%;
+  background-color: #727176;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.delete-btn {
+color: white;
+font-size: large;
+background-color: #313B44;
+padding: 5px;
+}

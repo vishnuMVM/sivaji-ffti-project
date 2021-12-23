@@ -61,6 +61,7 @@ class Header extends Component{
                             <p><Link className="header-list-item" to="/grow-with-us">Grow with us </Link></p>
                             <p> <Link className="header-list-item" to="/management">Management </Link></p>
                             <p> <Link className="header-list-item" to="/storelocation">Store Location </Link></p>
+                           {/* <Link to="/admin/all-categories"> <img src="img_avatar.png" alt="Avatar"></img> </Link> */}
                      </div>
                  </div>
          
