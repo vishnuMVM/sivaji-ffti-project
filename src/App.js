@@ -1,4 +1,6 @@
 import React from "react";
+import { Component } from "react";
+import CollectionnameContext from "./components/CollectionnameContext";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Achievements from "./components/Achievements/Achievements";
 import AddCollection from "./components/Categories/AddCollection";
@@ -14,14 +16,29 @@ import ImagesGrid from './components/Categories/ImagesGrid';
 import AllCategories from './components/Categories/AllCategories';
 
 
-function App() {
+class App extends Component {
+state={collectionname:""}
+
+Changecollectionname=(collectionname)=>{
+  this.setState({collectionname,})
+}
+
+  render(){
+    const {collectionname}=this.state;
   return (
     <BrowserRouter>
+    <CollectionnameContext.Provider 
+  value={
+    {
+      collectionname,
+      Changecollectionname:this.Changecollectionname,
+    }
+  }>
     <Header/>
     <Routes>
     <Route exact path="/" element={<Home />} />
     <Route exact path="/admin/add-collection" element={<AddCollection />}/>
-    {/* <Route exact path="/collection:name" element={<ImagesGrid name={name}/>}/> */}
+    <Route exact path="/collection/{collectionname}" element={<ImagesGrid name={collectionname}/>}/> 
     <Route exact path="/admin/all-categories" element={<AllCategories />}/>
     <Route exact path="/admin/update-collections" element={<UpdateCollections />}/>
     <Route exact path="/admin/images-grid" element={<ImagesGrid />}/>
@@ -32,8 +49,10 @@ function App() {
     </Routes>
     {/* <Footer /> */}
     <PageFooter />
+    </CollectionnameContext.Provider>
     </BrowserRouter>
   );
+}
 }
 
 export default App;

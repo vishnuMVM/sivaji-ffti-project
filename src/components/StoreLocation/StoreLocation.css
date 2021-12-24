@@ -30,20 +30,22 @@ box-shadow: 2px 2px 5px 5px black;
 
 }
 
-tr{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-table{
+.sl-table{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
 }
-h2{
-    text-decoration: underline;
+.sl-tr{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
+.sl-heading{
+    text-decoration: underline;
+    
+}
+
 
 
 @media screen and (min-width:901px) and (max-width:1200px){
@@ -90,5 +92,6 @@ h2{
         text-align: left;
        
     }
+  
 }
 

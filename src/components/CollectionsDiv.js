@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CollectionnameContext from "./components/CollectionnameContext";
 import {
   doc,
   getFirestore,
@@ -43,41 +44,59 @@ export default function CollectionsDiv (props){
   };
 
 
-  return(
+return(
+<CollectionnameContext.Consumer>
+{
+      value=>{
+        const {Changecollectionname}=value
 
-    <div>
-     <AddCollection />
-    <div className="center ">
-      <h2>Our Collections</h2> 
-    </div>
-    
-    <div className="collections center">
-   
-      {documents &&
-        documents.map((doc) => {
-          return (
-            <Link to={`/collection/${doc.name}`} >
-            <div key={doc.id} className="collection-items">
-              <img
-                className="collection-img"
-                src={doc.URL}
-                alt="Shorts"
-              ></img>
+        const Onchangecollectionname=(event)=>{
+            Changecollectionname(event.target.value)
+            console.log(event.target.value)
 
-              {/* <div className="update-Details" style={{paddingTop : "20px" ,display:"flex", justifyContent:"space-evenly" , gap:"10px"}}>
-                   <input onChange={enterProductName} type="text" name="product-name"/>
-                  <button> <i class="fas fa-trash"></i> delete</button>
-                  <button> <i class="fas fa-edit"></i> edit </button>
-              </div> */}
-           
-              <h4>{doc.name}</h4>
-            </div>
-            </Link>
-          );
-        })}
-    </div>
-  </div>
+        }
+        return(
 
-  )
+          <div>
+           <AddCollection />
+          <div className="center ">
+            <h2>Our Collections</h2> 
+          </div>
+          
+          <div className="collections center">
+         
+            {documents &&
+              documents.map((doc) => {
+                return (
+                  <Link to={`/collection/${doc.name}`} onClick={Onchangecollectionname} >
+                  <div key={doc.id} className="collection-items">
+                    <img
+                      className="collection-img"
+                      src={doc.URL}
+                      alt="Shorts"
+                    ></img>
+      
+                    {/* <div className="update-Details" style={{paddingTop : "20px" ,display:"flex", justifyContent:"space-evenly" , gap:"10px"}}>
+                         <input onChange={enterProductName} type="text" name="product-name"/>
+                        <button> <i class="fas fa-trash"></i> delete</button>
+                        <button> <i class="fas fa-edit"></i> edit </button>
+                    </div> */}
+                 
+                    <h4>{doc.name}</h4>
+                  </div>
+                  </Link>
+                );
+              })}
+          </div>
+        </div>
+      
+        )
+
+      }
+}
+</CollectionnameContext.Consumer>
+)
+
+ 
 
 }

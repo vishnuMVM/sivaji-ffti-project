@@ -6,3 +6,67 @@
     font-weight: bold;
     line-height: 30px;
 }
+.ach-table{
+    width:80%;
+    margin:10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.ach-tr{
+display: flex;
+justify-content:space-between;
+align-items: center;
+margin:20px auto;
+width:95%;
+}
+.ach-td{
+    margin-right: 20px;
+    text-align: justify;
+}
+
+.video{
+    width:48vw;
+    height:350px;
+}
+.table-txt{
+    font-size:18px;
+    
+}
+@media screen and (max-width:800px) {
+    .ach-intro-text{
+        width:85%;
+        margin:20px auto;
+        font-size: 16px;
+        text-align: justify;
+        font-weight: bold;
+        line-height: 30px;
+    }
+    .video{
+        width:400px;
+        height:250px;
+    }
+    .table-txt{
+        font-size:16px;
+    
+    }
+    .ach-table{
+        width:85%;
+        margin:10px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .ach-tr{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        margin:20px auto;
+        }
+    
+}

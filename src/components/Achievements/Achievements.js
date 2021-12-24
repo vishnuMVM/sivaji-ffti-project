@@ -18,6 +18,28 @@ export default function Achievements (){
         they started FFTI on FEB 13th 2012 and stood number 1 in the market from decade.
         Their passion towards women empowerment gave opportunity for nearby womens to work and become independent.  
       </div>
+      <div className='ach-table'>
+        <div className='ach-tr'>
+          <div className='ach-td'>
+            <h2 className='table-txt'>*Media recognised FFTI services, at the time of pandamec
+            </h2>
+          </div>
+          <div >
+          <embed className='video' src="https://www.youtube.com/embed/tz171FyvwO4"></embed>
+          </div>
+        </div>
+
+        <div className='ach-tr'>
+          <div className='ach-td'>
+            <h2 className='table-txt'>*ycp cricket cup event,hudihudihausiuuihui
+            </h2>
+          </div>
+          <div >
+          <embed className='video' src="https://www.youtube.com/embed/h1wAmA68bqI"></embed>
+          </div>
+        </div>
+       
+       </div>
 
     </div>
 
