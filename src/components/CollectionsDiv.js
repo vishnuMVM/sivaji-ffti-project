@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CollectionnameContext from "./components/CollectionnameContext";
+import CollectionnameContext from "./CollectionnameContext";
 import {
   doc,
   getFirestore,
@@ -13,10 +13,11 @@ import "./Categories/ImagesGrid.css"
 import AddCollection from "./Categories/AddCollection";
 import { Link } from "react-router-dom";
 
-export default function CollectionsDiv (props){
+export default function CollectionsDiv (){
   const [documents, setDocuments] = useState([]);
   var [loading, setLoading] = useState(true);
   const [productName,setProductName] = useState([])
+  const [collectionName,setCollectionName] = useState("")
   
 
   useEffect(() => {
@@ -42,6 +43,11 @@ export default function CollectionsDiv (props){
       });
     return { documents };
   };
+
+  const getCategoryName =(colName) => {
+      setCollectionName(colName)
+      console.log(colName)
+  }
 
 
 return(

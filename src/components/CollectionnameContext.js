@@ -1,6 +1,6 @@
 import React from "react";
 
-const CollectionnameContext=React.createContext(
+const CollectionnameContext = React.createContext(
 
     {collectionname:"",
     Changecollectionname:()=>{},

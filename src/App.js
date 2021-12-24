@@ -38,10 +38,10 @@ Changecollectionname=(collectionname)=>{
     <Routes>
     <Route exact path="/" element={<Home />} />
     <Route exact path="/admin/add-collection" element={<AddCollection />}/>
-    <Route exact path="/collection/{collectionname}" element={<ImagesGrid name={collectionname}/>}/> 
+    <Route exact path="/collection/{collectionname}" element={<ImagesGrid name="{collectionname}"/>}/> 
     <Route exact path="/admin/all-categories" element={<AllCategories />}/>
     <Route exact path="/admin/update-collections" element={<UpdateCollections />}/>
-    <Route exact path="/admin/images-grid" element={<ImagesGrid />}/>
+    <Route exact path="/admin/images-grid" element={<ImagesGrid name="T-Shirts"/>}/>
     <Route exact path="/management" element={<Management />}/>
     <Route exact path="/grow-with-us" element={<GrowWithUs />}/>
     <Route exact path="/achievements" element={<Achievements />}/>
