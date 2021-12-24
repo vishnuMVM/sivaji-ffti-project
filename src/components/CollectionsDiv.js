@@ -56,10 +56,8 @@ return(
       value=>{
         const {Changecollectionname}=value
 
-        const Onchangecollectionname=(event)=>{
-            Changecollectionname(event.target.value)
-            console.log(event.target.value)
-
+        const Onchangecollectionname=(name)=>{
+            Changecollectionname(name)
         }
         return(
 
@@ -74,8 +72,8 @@ return(
             {documents &&
               documents.map((doc) => {
                 return (
-                  <Link to={`/collection/${doc.name}`} onClick={Onchangecollectionname} >
-                  <div key={doc.id} className="collection-items">
+                  <Link key={doc.id}  to={`/collection/${doc.name}`} onClick={()=>Onchangecollectionname(doc.name)} >
+                  <div className="collection-items">
                     <img
                       className="collection-img"
                       src={doc.URL}

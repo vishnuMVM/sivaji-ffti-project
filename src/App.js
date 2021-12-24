@@ -14,13 +14,14 @@ import StoreLocation from "./components/StoreLocation/StoreLocation";
 import UpdateCollections from './components/Categories/UpdateCollections';
 import ImagesGrid from './components/Categories/ImagesGrid';
 import AllCategories from './components/Categories/AllCategories';
+import PageHeader from "./components/Header/PageHeader";
 
 
 class App extends Component {
 state={collectionname:""}
 
 Changecollectionname=(collectionname)=>{
-  this.setState({collectionname,})
+  this.setState({collectionname})
 }
 
   render(){
@@ -34,11 +35,12 @@ Changecollectionname=(collectionname)=>{
       Changecollectionname:this.Changecollectionname,
     }
   }>
-    <Header/>
+    {/* <Header/> */}
+    <PageHeader />
     <Routes>
     <Route exact path="/" element={<Home />} />
     <Route exact path="/admin/add-collection" element={<AddCollection />}/>
-    <Route exact path="/collection/{collectionname}" element={<ImagesGrid name="{collectionname}"/>}/> 
+    <Route exact path={`/collection/${collectionname}`} element={<ImagesGrid name={collectionname}/>}/> 
     <Route exact path="/admin/all-categories" element={<AllCategories />}/>
     <Route exact path="/admin/update-collections" element={<UpdateCollections />}/>
     <Route exact path="/admin/images-grid" element={<ImagesGrid name="T-Shirts"/>}/>
