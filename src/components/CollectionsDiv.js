@@ -12,10 +12,11 @@ import "./Categories/ImagesGrid.css"
 import AddCollection from "./Categories/AddCollection";
 import { Link } from "react-router-dom";
 
-export default function CollectionsDiv (props){
+export default function CollectionsDiv (){
   const [documents, setDocuments] = useState([]);
   var [loading, setLoading] = useState(true);
   const [productName,setProductName] = useState([])
+  const [collectionName,setCollectionName] = useState("")
   
 
   useEffect(() => {
@@ -42,6 +43,11 @@ export default function CollectionsDiv (props){
     return { documents };
   };
 
+  const getCategoryName =(colName) => {
+      setCollectionName(colName)
+      console.log(colName)
+  }
+
 
   return(
 
@@ -57,7 +63,10 @@ export default function CollectionsDiv (props){
         documents.map((doc) => {
           return (
             <Link to={`/collection/${doc.name}`} >
-            <div key={doc.id} className="collection-items">
+            <div key={doc.id} className="collection-items" onClick={()=> {
+              getCategoryName(doc.name)
+            }}>
+                      
               <img
                 className="collection-img"
                 src={doc.URL}
