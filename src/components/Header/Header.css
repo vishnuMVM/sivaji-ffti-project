@@ -177,6 +177,7 @@
             display: inline-block;
             width:100vw;
         }
+        
         .header-image-container{
             display: flex;
             justify-content:flex-start;
@@ -285,6 +286,16 @@
                 color:white;
             
             }
+            .header-container{
+                display: flex;
+                margin:0;
+                padding:6px 0;
+                justify-content: space-around;
+                background-color:#313B44;
+                height:100px;
+                box-sizing: border-box;
+                align-items: center;
+                }
             .header-list-items-container{
                 display: flex;
                 list-style: none;

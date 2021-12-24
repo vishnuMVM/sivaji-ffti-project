@@ -36,10 +36,9 @@
     height: 250px;
     width: 250px;
   }
-  h1{
-    font-size: larger;
-  }
 
-
+h1{
+  font-size: 22px;
+}
 
 }

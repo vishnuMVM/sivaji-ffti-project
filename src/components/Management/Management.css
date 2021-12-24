@@ -181,7 +181,7 @@ width:60%;
         }
         .para{
             text-align: justify;
-            height:fitcontent;
+            height:fit-content;
             width:85%;
         }
         .mng-pg-icon-container{
