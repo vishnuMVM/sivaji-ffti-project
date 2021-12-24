@@ -84,17 +84,76 @@
     .header-list-item:hover{
         color:#5C90AA;
     }
+      
     
-    
-    
-    
-    
-    
+    .user-img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .dropdown{
+        background-color:#313B44 ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+
+    }
+    .no-border-btn{
+        border: none;
+        outline: none;
+    }
+    .dropbtn {
+        box-shadow: none;
+        font-size: larger;
+        text-align: center;
+        background-color:#313B44;
+        color: white;
+        padding: 10px;
+        position: relative;
+        display: inline-block;
+    }
+  .user-div:hover  .dropdown-content{
+    display: block;
+  }
+  .dropdown-content {
+      margin-top: 200px;
+    display: none;
+    right: 0;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: #8e99a2;
+  } 
     .header-desktop{
         display:none;
     }
     
     @media screen and (min-width:801px){
+     
         .header-desktop{
             display: inline-flex;
             width:100vw;
@@ -105,9 +164,15 @@
     .header-mobile{
         display:none;
     }
+   
     
     
     @media screen and (max-width:800px) {
+        .user-img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
         .header-mobile{
             display: inline-block;
             width:100vw;
@@ -158,10 +223,10 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width:200px;
+            width:250px;
             background-color: #5c7183;
             transition:800ms ease-in-out;
-            
+            z-index: 10;
            
         }
     
@@ -174,7 +239,7 @@
             background-color:black;
             transition:800ms ease-in-out;
             opacity: 0.6;
-            
+            z-index: 10;
             
         }
         .sidebar-container{

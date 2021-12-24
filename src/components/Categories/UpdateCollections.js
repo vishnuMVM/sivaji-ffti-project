@@ -72,7 +72,7 @@ export default function UpdateCollections (props){
   return(
     <div className="dropzone-div">
 
-    <h1>Update {props.name} Collection Here</h1>
+    <h2>Update {props.name} Collection Here</h2>
 
     <div className="input-div" {...getRootProps()} style={{"width" : "100%", "height" : "100px", "border" : "1px dashed black","textAlign":"center"}} >
         <input {...getInputProps()} />

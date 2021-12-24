@@ -1,10 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect } from "react";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { Storage, db, timestamp } from "../firebase/config";
 import { collection, addDoc } from "firebase/firestore";
 import Dropzone from "react-dropzone";
 import { Link } from "react-router-dom";
-import "./CategoriesStyles.css"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -14,6 +13,7 @@ export default function AddCollection() {
   const [progress, setProgress] = useState(0);
   const [categoryName, setCategoryName] = useState("");
   var [isFileSelected, setIsFileSelected] = useState(false);
+  const [count,setCount] = useState(0)
 
   const nameRef = useRef();
 
@@ -21,9 +21,16 @@ export default function AddCollection() {
     var name = e.target.value;
     setCategoryName(name);
   };
+  useEffect(()=>{
+    if (count>0){
+      setTimeout(handleReset,2000)
+
+    }
+  },[count])
 
   const handleReset = (e) => {
     window.location.reload();
+    console.log('reset')
   };
 
   const handleUpload = async () => {
@@ -46,10 +53,11 @@ export default function AddCollection() {
               // name:categoryImage
             });
             nameRef.current.value = "";
-            alert("Your Image is Uploaded");
+            // alert("Your Image is Uploaded");
             setLoading(true);
             setIsFileSelected(false);
             console.log(categoryImage);
+            setCount(prev=>prev+=5)
           });
         }
       );
@@ -109,7 +117,10 @@ export default function AddCollection() {
       <input className="input-field" type="text" placeholder="Enter Category Name" required ref={nameRef} onChange={handleCategoryName} />
       </label>
       <div className="preview-Images">{previewImage}</div>
-      {loading ? (
+      <button className="upload-btn" onClick={handleUpload}>
+          Upload Image
+        </button>
+      {/* {loading ? (
         <Link to="/">
         <button className="upload-btn">
           View Collections
@@ -118,7 +129,7 @@ export default function AddCollection() {
         <button className="upload-btn" onClick={handleUpload}>
           Upload Image
         </button>
-      )}
+      )} */}
       <ToastContainer />
     </div>
   );

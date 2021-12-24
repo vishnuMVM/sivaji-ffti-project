@@ -1,8 +1,7 @@
 .categories-div{
   background-color: #c9c7d3;
   display: grid;
-  grid-template-columns: 300px 1fr;
-
+  grid-template-columns: 20% 1fr;
 }
 
 .sidebar-categories{
@@ -14,18 +13,90 @@
 
 }
 .sidebar-items {
+  padding: 10px;
   width: 100%;
   background-color: #727176;
   font-weight: bold;
   text-align: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 .delete-btn {
-color: white;
+color: #c9c8c8;
 font-size: large;
-background-color: #313B44;
-padding: 5px;
+background-color: #727176;
+}
+.sidebar-items p{
+  color: white;
+  font-size: 18px;
+}
+.sidebar-items:hover {
+background-color: black;
+}
+
+ /* UPDATE COLLECTIONS STYLINGS  */
+.upload-btn {
+  background-color: #313B44;
+  width: max-content;
+  height: max-content;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.preview-Images {
+  padding: 20px;
+  margin: 0 auto;
+
+}
+
+.input-div {
+  background-color: #d3d0d0;
+  text-align: center;
+  border: 2px dashed black;
+}
+.dropzone-div {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.input-field{
+  margin: 10px;
+  padding: 10px;
+}
+
+.center input {
+
+}
+.center p {
+  padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .categories-div{
+    background-color: #c9c7d3;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+  }
+  .fas .sidebar-items p{
+    color: white;
+    font-size: 10px;
+  }
+
+
+
 }

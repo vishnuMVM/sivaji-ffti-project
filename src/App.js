@@ -21,6 +21,7 @@ function App() {
     <Routes>
     <Route exact path="/" element={<Home />} />
     <Route exact path="/admin/add-collection" element={<AddCollection />}/>
+    {/* <Route exact path="/collection:name" element={<ImagesGrid name={name}/>}/> */}
     <Route exact path="/admin/all-categories" element={<AllCategories />}/>
     <Route exact path="/admin/update-collections" element={<UpdateCollections />}/>
     <Route exact path="/admin/images-grid" element={<ImagesGrid />}/>

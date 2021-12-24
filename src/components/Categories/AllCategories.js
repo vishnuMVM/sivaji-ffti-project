@@ -89,14 +89,14 @@ export default function AllCategories (){
   };
 
   return(
-    <>
+    <div>
     <div className='categories-div'>
     <div className='sidebar-categories'>
 
     {categories.map((item)=> {
-      return <div className='sidebar-items'>
-      <h4 onClick={()=>handleCategoriesClick(item.name)} >{item.name}</h4>
-      <button className="delete-btn" style={{zIndex:"2"}} onClick={()=>handleDeleteCategory(item.name,item.id)}><i class="fas fa-trash"></i></button>
+      return <div className='sidebar-items' onClick={()=>handleCategoriesClick(item.name)} >
+      <p>{item.name}</p>
+      <button className="delete-btn no-border-btn" style={{zIndex:"2"}} onClick={()=>handleDeleteCategory(item.name,item.id)}><i class="fas fa-trash"></i></button>
       </div>
     })}
     </div>
@@ -109,7 +109,7 @@ export default function AllCategories (){
 
     </div>
 
-    </>
+    </div>
   )
 
 }

@@ -16,12 +16,14 @@ const ImagesGrid = (props) => {
   const [documents, setDocuments] = useState([]);
   var [loading, setLoading] = useState(true);
   const [productName,setProductName] = useState([])
+  const [count,setCount] = useState(0)
+
   
 
   useEffect(() => {
     const unsub = getData();
     return unsub;
-  }, [props]);
+  }, [props,count]);
 
   const getData = async () => {
     const db = getFirestore();
@@ -52,11 +54,13 @@ const ImagesGrid = (props) => {
     const docRef = doc(db, props.name, id)
     console.log(docRef)
     await deleteDoc(docRef);
+    setCount(prev=>prev+=1)
 
   }
 
   return (
     <div>
+    {console.log(props)}
       <UpdateCollections name={props.name} />
       <h1 className="center">{props.name}</h1>
       <div className="collections center">
@@ -77,7 +81,7 @@ const ImagesGrid = (props) => {
                     {/* <button> <i class="fas fa-edit"></i> edit </button> */}
                 </div>
              
-                <h4>{doc.name}</h4>
+                {/* <h4>{doc.name}</h4> */}
               </div>
             );
           })}

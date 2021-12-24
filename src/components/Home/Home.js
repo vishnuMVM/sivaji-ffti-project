@@ -2,13 +2,15 @@ import React from "react";
 import Slider from "react-carousel-responsive";
 import "react-carousel-responsive/dist/styles.css";
 import CollectionsDiv from "../CollectionsDiv";
+import ControlledCarousel from "../ControlledCarousel";
 import "./Home.css";
 
 export default function Home() {
   return (
     <div className="home">
       {/* --------- Carousel Div ----------- */}
-      <div className="carousel-Div center">
+      <ControlledCarousel />
+      {/* <div className="carousel-Div center">
         <Slider
           autoplay="true"
           autoplaySpeed="2000"
@@ -32,9 +34,10 @@ export default function Home() {
             alt=""
           />
         </Slider>
-      </div>
+      </div> */}
 
       {/*-------Collections Div --------*/}
+     
       <CollectionsDiv />
 
       {/* <div className="center" style={{ width: "100%", textAlign: "center" }}>
