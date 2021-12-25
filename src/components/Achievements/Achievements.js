@@ -11,12 +11,14 @@ export default function Achievements (){
         <br/>  <br/>
         These two youngsters are self-made enterprenuers, 
         who always dreamed to achieve big from their childhood.
-        They started earning when they were students and they both met at hyderabad while they were working for 
-        a mlm company, from then they travelled all the way to what they are now.
+        They started earning when they were students and they both met at hyderabad from then they travelled all the way to what they are now.
         <br/>  <br/>
         Having realised a fact that textile industry is the one never goes out of fashion, 
         they started FFTI on FEB 13th 2012 and stood number 1 in the market from decade.
-        Their passion towards women empowerment gave opportunity for nearby womens to work and become independent.  
+        Their passion towards women empowerment gave opportunity for nearby womens to work and become independent.
+        <br/> <br/>
+        They have a enterprenuer mindset rather than a employee which provided employment for 80 members directly
+        and 120 members indirectly.  
       </div>
       <div className='ach-table'>
         <div className='ach-tr'>
