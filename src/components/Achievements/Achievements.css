@@ -19,16 +19,17 @@
 display: flex;
 justify-content:space-between;
 align-items: center;
-margin:20px auto;
+margin:20px 2px;
 width:95%;
 }
 .ach-td{
-    margin-right: 20px;
+    margin-right: 5px;
     text-align: justify;
+    width:35%;
 }
 
 .video{
-    width:48vw;
+    width:46vw;
     height:350px;
 }
 .table-txt{
@@ -68,5 +69,15 @@ width:95%;
         align-items: center;
         margin:20px auto;
         }
-    
+        .ach-td{
+            margin: 10px auto;
+            width:80%;
+        }
+        
+        .table-txt{
+            font-size:16px;
+            text-align: center;
+            margin:auto;
+            
+        }
 }
