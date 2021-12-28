@@ -1,0 +1,18 @@
+.carousel-img-delete {
+  /* z-index: 1; */
+  width: 70vw;
+}
+
+.carousel-img-delete button {
+border: none;
+color: red;
+}
+
+
+.offers-carousel {
+  width: 70vw;
+}
+.carousel-center{
+  margin:0 auto;
+  padding-top: 20px;
+}

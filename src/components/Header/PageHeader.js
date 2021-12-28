@@ -3,18 +3,27 @@ import "./PageHeader.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Logo from "./Logo.jpg";
-import Achievements from "../Achievements/Achievements";
-import GrowWithUs from "../GrowWithUs/GrowWithUs";
+import { useAuth,logout } from '../firebase/config';
+
 
 export default function PageHeader() {
   const [isClicked, setIsClicked] = useState(false);
+  const currentUser = useAuth();
 
   function handleClick() {
     setIsClicked(!isClicked);
   }
-  function onLogOutClicked () {
-    console.log("logout clicked")
+  async function onLogOutClicked () {
+    try {
+      await logout();
+    } catch {
+      alert("Error!");
+    }
   }
+
+
+
+
   return (
     <>
       <div className={isClicked ? "topnav responsive" : "topnav"} id="myTopnav">
@@ -25,11 +34,11 @@ export default function PageHeader() {
         <Link to="/grow-with-us">Grow With Us</Link>
         <Link to="/about">About</Link>
         <div className="sidebarItems">
-        <Link  to=""><button onClick={onLogOutClicked}>Log out</button></Link>
+        
         <Link to="/admin/add-collection">Add New Collection</Link>
          <Link  to="/admin/all-categories">Manage Collections</Link>
          <Link to="/admin/manage-carousel">Manage Carousel</Link>
-        
+        <Link onClick={onLogOutClicked} to=""><button className="logout" >Log out</button></Link>
        </div>
         <a
           href="#"
@@ -39,17 +48,20 @@ export default function PageHeader() {
         >
           <i className="fas fa-bars"></i>
         </a>
-        <div className="dropdownn rightside ">
+
+        {currentUser && <div className="dropdownn rightside ">
           <button className="dropbtn rightside">
-          <i class="far fa-user"></i>
+          <i className="far fa-user"></i>
             <i className="fa fa-caret-down"></i>
           </button>
+
           <div className="dropdown-content">
             <Link to="/admin/add-collection">Add New Collection</Link>
             <Link to="/admin/all-categories">Manage Collections</Link>
-            <Link to=""><button onClick={onLogOutClicked}>Log out</button></Link>
+            <Link to="/admin/manage-carousel">Manage Carousel</Link>
+            <Link to=""><button className="logout" onClick={onLogOutClicked}>Log out</button></Link>
           </div>
-        </div>
+        </div> }
       </div>
 
       {/* <div style="padding-left:16px">
