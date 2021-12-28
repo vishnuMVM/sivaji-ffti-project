@@ -1,7 +1,7 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./CarouselStyles.css"
+import "./CarouselStyles.css";
 import {
   doc,
   getFirestore,
@@ -11,31 +11,29 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
-import { db, timestamp } from "../firebase/config";
+import { db, timestamp, useAuth } from "../firebase/config";
 
 export default function ControlledCarousel() {
-
   const [count, setCount] = useState(0);
   const [documents, setDocuments] = useState([]);
   var [loading, setLoading] = useState(true);
+  const currentUser = useAuth();
 
   useEffect(() => {
     const unsub = getData();
     return unsub;
   }, []);
 
-  useEffect(()=>{
-    if (count>0){
-      setTimeout(handleReset,2000)
-
+  useEffect(() => {
+    if (count > 0) {
+      setTimeout(handleReset, 2000);
     }
-  },[count])
+  }, [count]);
 
   const handleReset = (e) => {
     window.location.reload();
-    console.log('reset')
+    console.log("reset");
   };
-
 
   const getData = async () => {
     const db = getFirestore();
@@ -58,23 +56,24 @@ export default function ControlledCarousel() {
 
   const deleteCarouselImage = async (imgIndex) => {
     const imageRef = doc(db, "Carousel Images", imgIndex);
-    await deleteDoc(imageRef)
-    setCount(prev=>prev+5)
-    
+    await deleteDoc(imageRef);
+    setCount((prev) => prev + 5);
   };
 
   return (
     <div className="offers-carousel carousel-center">
-      <Carousel autoPlay={true} pause ='hover' interval={4000}>
-        {documents.map((image,idx) => (
-          <Carousel.Item  key={idx}>
-          <div className= "carousel-img-delete center">
-  <button  onClick={()=>deleteCarouselImage(image.id)}><i className="fas fa-trash"></i> Delete</button>
-          </div>
-        
+      <Carousel autoPlay={true} pause="hover" interval={2000}>
+        {documents.map((image, idx) => (
+          <Carousel.Item key={idx}>
+            {currentUser && (
+              <div className="carousel-img-delete center">
+                <button onClick={() => deleteCarouselImage(image.id)}>
+                  <i className="fas fa-trash"></i> Delete
+                </button>
+              </div>
+            )}
+
             <img className="d-block w-100" src={image.URL} alt="offers" />
-          
-           
           </Carousel.Item>
         ))}
       </Carousel>

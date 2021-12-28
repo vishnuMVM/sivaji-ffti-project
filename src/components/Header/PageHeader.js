@@ -32,14 +32,15 @@ export default function PageHeader() {
         </Link>
         <Link to="/achievements">Achievements</Link>
         <Link to="/grow-with-us">Grow With Us</Link>
-        <Link to="/about">About</Link>
-        <div className="sidebarItems">
+        <Link to="/storelocation">Store Location</Link>
+        <Link to="/management">Management</Link>
+       { currentUser && <div className="sidebarItems">
         
         <Link to="/admin/add-collection">Add New Collection</Link>
          <Link  to="/admin/all-categories">Manage Collections</Link>
          <Link to="/admin/manage-carousel">Manage Carousel</Link>
         <Link onClick={onLogOutClicked} to=""><button className="logout" >Log out</button></Link>
-       </div>
+       </div>}
         <a
           href="#"
           styles={{ fontSize: "15px" }}
