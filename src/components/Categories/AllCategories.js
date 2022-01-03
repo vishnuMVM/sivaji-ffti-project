@@ -92,7 +92,6 @@ export default function AllCategories (){
     <div>
     <div className='categories-div'>
     <div className='sidebar-categories'>
-
     {categories.map((item)=> {
       return <div className='sidebar-items' onClick={()=>handleCategoriesClick(item.name)} >
       <p>{item.name}</p>

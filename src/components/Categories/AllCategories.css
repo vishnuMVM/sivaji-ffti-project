@@ -5,7 +5,7 @@
 }
 
 .sidebar-categories{
-  background-color: #727176;
+  background-color: #5c7183;
 
 }
 .gallery-view{
@@ -15,26 +15,27 @@
 .sidebar-items {
   padding: 10px;
   width: 100%;
-  background-color: #727176;
+  background-color: #1f364b;
   font-weight: bold;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:5px 20px;
+  /* padding:5px 20px; */
 }
 
 .delete-btn {
 color: #c9c8c8;
-font-size: large;
+font-size: 18px;
 background-color: #727176;
+border: none;
 }
 .sidebar-items p{
   color: white;
   font-size: 18px;
 }
 .sidebar-items:hover {
-background-color: black;
+background-color: #426d94;
 }
 
  /* UPDATE COLLECTIONS STYLINGS  */
@@ -89,11 +90,23 @@ background-color: black;
     display: grid;
     grid-template-columns: 40% 1fr;
   }
-  .fas .sidebar-items p{
+  .fas {
     color: white;
     font-size: 10px;
   }
-
-
+  .sidebar-items p{
+    font-size: 10px;
+  }
+.delete-btn {
+  width: 30px;
+  height: 30px;
+}
+.dropzone-div h2 ,h3 {
+  font-size: 18px;
+}
+.upload-btn {
+width: 100px;
+font-size: 10px;
+}
 
 }

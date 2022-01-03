@@ -4,9 +4,7 @@ import CollectionnameContext from "./components/CollectionnameContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Achievements from "./components/Achievements/Achievements";
 import AddCollection from "./components/Categories/AddCollection";
-import Footer from "./components/Footer/Footer";
 import GrowWithUs from "./components/GrowWithUs/GrowWithUs";
-import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Management from "./components/Management/Management";
 import PageFooter from "./components/PageFooter/PageFooter";
@@ -17,12 +15,14 @@ import AllCategories from "./components/Categories/AllCategories";
 import PageHeader from "./components/Header/PageHeader";
 import Login from "./components/Login/Login";
 import ManageCarousel from './components/Carousel/ManageCarousel';
+import {useAuth} from "./components/firebase/config"
 class App extends Component {
   state = { collectionname: "" };
 
   Changecollectionname = (collectionname) => {
     this.setState({ collectionname });
   };
+  
 
   render() {
     const { collectionname } = this.state;
