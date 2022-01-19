@@ -1,7 +1,7 @@
 .categories-div{
   background-color: #c9c7d3;
   display: grid;
-  grid-template-columns: 20% 1fr;
+  grid-template-columns: 25% 1fr;
 }
 
 .sidebar-categories{

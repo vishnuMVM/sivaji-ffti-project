@@ -16,16 +16,26 @@ import PageHeader from "./components/Header/PageHeader";
 import Login from "./components/Login/Login";
 import ManageCarousel from './components/Carousel/ManageCarousel';
 import {useAuth} from "./components/firebase/config"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import NavBar from "./components/Header/NavBar";
 class App extends Component {
-  state = { collectionname: "" };
+  state = { collectionname: "" ,currentUser:""};
 
   Changecollectionname = (collectionname) => {
     this.setState({ collectionname });
   };
-  
+
+  getCurrentUser = () => {
+    this.setState({currentUser:useAuth()})
+    console.log(this.state.currentUser)
+  }
+  componentDidMount=()=> {
+
+  }
 
   render() {
     const { collectionname } = this.state;
+
     return (
       <BrowserRouter>
         <CollectionnameContext.Provider
@@ -35,6 +45,7 @@ class App extends Component {
           }}
         >
           {/* <Header/> */}
+          {/* <NavBar /> */}
           <PageHeader />
           <Routes>
             <Route exact path="/" element={<Home />} />

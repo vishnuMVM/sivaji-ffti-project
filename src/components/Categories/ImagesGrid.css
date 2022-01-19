@@ -27,10 +27,19 @@
 .collection-img{
   height: 300px;
   width: 300px;
+  border-radius: 20px;
 }
 
 .collections h4{
   text-align: center;
+
+}
+#collection-name {
+  text-decoration: none;
+  color: black;
+}
+a{
+  text-decoration: none;
 }
 
 .collection-items{

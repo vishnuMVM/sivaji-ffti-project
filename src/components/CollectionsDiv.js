@@ -72,6 +72,7 @@ export default function CollectionsDiv() {
                       onClick={() =>
                         Onchangecollectionname(doc.name)
                       }
+                      style={{textDecoration:"none"}}
                     >
                       <div className="collection-items">
                         <img
@@ -86,7 +87,7 @@ export default function CollectionsDiv() {
                         <button> <i class="fas fa-edit"></i> edit </button>
                     </div> */}
 
-                        <h4>{doc.name}</h4>
+                        <h4 id="collection-name">{doc.name}</h4>
                       </div>
                     </Link>
                   );

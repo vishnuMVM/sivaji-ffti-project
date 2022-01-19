@@ -8,6 +8,7 @@ import {
   orderBy,
   query,
 } from "firebase/firestore";
+import { useAuth } from "../firebase/config";
 import { db, timestamp } from "../firebase/config";
 import "./ImagesGrid.css"
 import UpdateCollections from "./UpdateCollections";
@@ -17,6 +18,7 @@ const ImagesGrid = (props) => {
   var [loading, setLoading] = useState(true);
   const [productName,setProductName] = useState([])
   const [count,setCount] = useState(0)
+  const currentUser = useAuth();
 
   
 
@@ -61,7 +63,7 @@ const ImagesGrid = (props) => {
   return (
     <div>
     {console.log(props)}
-      <UpdateCollections name={props.name} />
+      {currentUser && <UpdateCollections name={props.name} />}
       <h1 className="center">{props.name}</h1>
       <div className="collections center">
      
@@ -75,11 +77,11 @@ const ImagesGrid = (props) => {
                   alt="Shorts"
                 ></img>
 
-                <div className="update-Details" style={{paddingTop : "20px" ,display:"flex", justifyContent:"space-evenly" , gap:"10px"}}>
+               {currentUser&& <div className="update-Details" style={{paddingTop : "20px" ,display:"flex", justifyContent:"space-evenly" , gap:"10px"}}>
                      {/* <input onChange={enterProductName} type="text" name="product-name"/> */}
                     <button onClick={()=>onDeleteItem(doc.id)}> <i class="fas fa-trash"></i> delete</button>
                     {/* <button> <i class="fas fa-edit"></i> edit </button> */}
-                </div>
+                </div>}
              
                 {/* <h4>{doc.name}</h4> */}
               </div>
