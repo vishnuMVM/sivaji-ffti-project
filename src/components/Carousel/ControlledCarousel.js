@@ -12,6 +12,8 @@ import {
   query,
 } from "firebase/firestore";
 import { db, timestamp, useAuth } from "../firebase/config";
+import { TailSpin } from  'react-loader-spinner'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 export default function ControlledCarousel() {
   const [count, setCount] = useState(0);
@@ -60,8 +62,12 @@ export default function ControlledCarousel() {
     setCount((prev) => prev + 5);
   };
 
-  return (
-    <div className="offers-carousel carousel-center">
+  return ( 
+    <>
+
+ {
+  loading?<div className="loader"><TailSpin  color="#00BFFF" height={80} width={80} /></div>:
+  <div className="offers-carousel carousel-center">
       <Carousel autoPlay={true} pause="hover" interval={2000}>
         {documents.map((image, idx) => (
           <Carousel.Item key={idx}>
@@ -77,6 +83,9 @@ export default function ControlledCarousel() {
           </Carousel.Item>
         ))}
       </Carousel>
-    </div>
+    </div> }
+
+     </>  
   );
+          
 }

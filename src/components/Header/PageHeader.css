@@ -133,4 +133,11 @@ margin-top: 55px;
     width: 100%;
     text-align: left;
   }
+
+  .fa-bars{
+    font-size: 30px;
+  }
+  .sidebarItems a {
+    display: none;
+  }
 }

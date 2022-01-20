@@ -25,7 +25,7 @@
 }
 
 .delete-btn {
-color: #c9c8c8;
+/* color: #c9c8c8; */
 font-size: 18px;
 background-color: #727176;
 border: none;
@@ -88,7 +88,7 @@ background-color: #426d94;
   .categories-div{
     background-color: #c9c7d3;
     display: grid;
-    grid-template-columns: 40% 1fr;
+    grid-template-columns: 30% 1fr;
   }
   .fas {
     color: white;
@@ -108,5 +108,4 @@ background-color: #426d94;
 width: 100px;
 font-size: 10px;
 }
-
 }

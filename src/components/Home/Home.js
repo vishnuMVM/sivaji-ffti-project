@@ -5,7 +5,9 @@ import CollectionsDiv from "../CollectionsDiv";
 import ControlledCarousel from "../Carousel/ControlledCarousel";
 import "./Home.css";
 
+
 export default function Home() {
+
   return (
     <div className="home" >
       {/* --------- Carousel Div ----------- */}

@@ -18,6 +18,7 @@ import ManageCarousel from './components/Carousel/ManageCarousel';
 import {useAuth} from "./components/firebase/config"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import NavBar from "./components/Header/NavBar";
+
 class App extends Component {
   state = { collectionname: "" ,currentUser:""};
 
@@ -47,6 +48,7 @@ class App extends Component {
           {/* <Header/> */}
           {/* <NavBar /> */}
           <PageHeader />
+
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/admin" element={<Login />} />

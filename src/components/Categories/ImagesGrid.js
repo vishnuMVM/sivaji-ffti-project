@@ -12,6 +12,9 @@ import { useAuth } from "../firebase/config";
 import { db, timestamp } from "../firebase/config";
 import "./ImagesGrid.css"
 import UpdateCollections from "./UpdateCollections";
+import { TailSpin } from  'react-loader-spinner'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+
 
 const ImagesGrid = (props) => {
   const [documents, setDocuments] = useState([]);
@@ -61,6 +64,10 @@ const ImagesGrid = (props) => {
   }
 
   return (
+    <>
+
+{
+  loading?<div className="loader"><TailSpin  color="#00BFFF" height={80} width={80} /></div>:  
     <div>
     {console.log(props)}
       {currentUser && <UpdateCollections name={props.name} />}
@@ -88,7 +95,8 @@ const ImagesGrid = (props) => {
             );
           })}
       </div>
-    </div>
+    </div> }
+     </>
   );
 };
 

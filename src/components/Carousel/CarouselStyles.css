@@ -6,6 +6,12 @@
 .carousel-img-delete button {
 border: none;
 color: red;
+padding: 5px;
+background-color: #302c2c;
+}
+.loader{
+  margin: 0 auto;
+  padding: 100px;
 }
 
 
@@ -15,4 +21,11 @@ color: red;
 .carousel-center{
   margin:0 auto;
   padding-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .offers-carousel {
+    width: 90vw;
+  }
+
 }
