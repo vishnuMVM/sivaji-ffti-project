@@ -36,6 +36,9 @@ width:95%;
     font-size:18px;
     
 }
+.article{
+    font-size: 24px;
+}
 @media screen and (max-width:800px) {
     .ach-intro-text{
         width:85%;
@@ -46,8 +49,8 @@ width:95%;
         line-height: 30px;
     }
     .video{
-        width:400px;
-        height:250px;
+        width:375px;
+        height:225px;
     }
     .table-txt{
         font-size:16px;
@@ -79,5 +82,8 @@ width:95%;
             text-align: center;
             margin:auto;
             
+        }
+        .article{
+            font-size: 16px;
         }
 }
