@@ -1,5 +1,6 @@
 import React from 'react';
 import './PageFooter.css'
+import { Link } from 'react-router-dom';
 
 export default function PageFooter (){
 
@@ -21,52 +22,26 @@ export default function PageFooter (){
     </address>
   </div>
   
-  <ul className="footer__nav">
-    <li className="nav__item">
-      <h2 className="nav__title">Our Collections</h2>
-
-      <ul className="nav__ul">
-        <li>
-          <a href="#">Tshirts</a>
-        </li>
-
-        <li>
-          <a href="#">Track pants</a>
-        </li>
-            
-        <li>
-          <a href="#">Casuals</a>
-        </li>
-      </ul>
-    </li>
-    
+  <ul className="footer__nav">  
     <li className="nav__item nav__item--extra">
       <h2 className="nav__title">Stores</h2>
       
       <ul className="nav__ul nav__ul--extra">
         <li>
-          <a href="#">Factory</a>
+        <Link to="/grow-with-us">Grow With Us</Link>
         </li>
         
         <li>
-          <a href="#">Retail Outlets</a>
+        <Link to="/storelocation">Store Location</Link>
         </li>
         
         <li>
-          <a href="#">Store Location</a>
+        <Link to="/management">Management</Link>
         </li>
         
         <li>
-          <a href="#">Work with us</a>
+        <Link to="/achievements">Achievements</Link>
         </li>
-        
-        {/* <li>
-          <a href="#">Artificial Intelligence</a>
-        </li>
-        
-        <li>
-          <a href="#">IoT</a>
-        </li> */}
       </ul>
     </li>
     
@@ -75,11 +50,11 @@ export default function PageFooter (){
       
       <ul className="nav__ul">
         <li>
-          <a href="#">yvishnuvardhan325@gmail.com</a>
+          <a href="mailto:yvishnuvardhan325@gmail.com">yvishnuvardhan325@gmail.com</a>
         </li>
         
         <li>
-          <a href="#">damalokeshskht@gmail.com</a>
+          <a href="mailto:damalokeshskht@gmail.com">damalokeshskht@gmail.com</a>
         </li>
         
         {/* <li>
@@ -90,10 +65,10 @@ export default function PageFooter (){
   </ul>
   
   <div className="legal">
-    <p>&copy; 2019 Something. All rights reserved.</p>
+    <p>&copy; 2022. All rights reserved.</p>
     
     <div className="legal__links">
-      <span>Designed by <span className="heart">♥</span> LokmaStudio</span>
+      <span>Designed by <span className="heart">♥</span> Vishnu&Lokesh</span>
     </div>
   </div>
 </footer>

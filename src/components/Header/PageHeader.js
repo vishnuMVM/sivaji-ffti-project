@@ -27,8 +27,12 @@ export default function PageHeader() {
   return (
     <>
       <div className={isClicked ? "topnav responsive" : "topnav"} id="myTopnav">
-        <Link to="/">
-          <img className="logo-img" src={Logo} alt="logo" />
+        <Link style={{padding:5,fontSize:10}}  to="/">
+          <div className=" logo-div d-flex flex-row">
+             <img className="logo-img" src={Logo} alt="logo" />
+             <p className="logo-text">Futures First<br/> Texties India</p>
+          </div>
+         
         </Link>
         <Link to="/achievements">Achievements</Link>
         <Link to="/grow-with-us">Grow With Us</Link>
@@ -53,7 +57,7 @@ export default function PageHeader() {
         {currentUser && <div className="dropdownn rightside ">
           <button className="dropbtn rightside">
           <i className="far fa-user"></i>
-            <i className="fa fa-caret-down"></i>
+            <i className="fa fa-caret-down"></i> Admin
           </button>
 
           <div className="dropdown-content">
