@@ -10,11 +10,7 @@ export default function Home() {
 
   return (
     <div className="home" >
-      {/* --------- Carousel Div ----------- */}
-
          <ControlledCarousel />
-
-     
       <CollectionsDiv />
      
     </div>

@@ -4,5 +4,11 @@
 .fct-map{
     height:100%;
     width:100%;
+ }
+ .store-location-bg-container{
+    background-image: url("https://www.pngplay.com/wp-content/uploads/2/World-Map-Transparent-Background.png");
+    height:fit-content;
+    background-size: cover;
     
-    }
+ }
+

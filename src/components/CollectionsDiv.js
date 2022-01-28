@@ -12,6 +12,8 @@ import {
 import "./Categories/ImagesGrid.css";
 import AddCollection from "./Categories/AddCollection";
 import { Link } from "react-router-dom";
+import { TailSpin } from  'react-loader-spinner'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 export default function CollectionsDiv() {
   const [documents, setDocuments] = useState([]);
@@ -56,8 +58,8 @@ export default function CollectionsDiv() {
           Changecollectionname(name);
         };
         return (
-          <div>
-            {/* <AddCollection /> */}
+          <>
+         {loading?<div className="loader"><TailSpin  color="#00BFFF" height={100} width={100} /></div>: <div>
             <div className="center ">
               <h2>Our Collections</h2>
             </div>
@@ -93,7 +95,8 @@ export default function CollectionsDiv() {
                   );
                 })}
             </div>
-          </div>
+          </div>}
+          </>
         );
       }}
     </CollectionnameContext.Consumer>

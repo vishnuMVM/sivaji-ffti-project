@@ -4,7 +4,7 @@ import "./StoreLocation.css";
 export default function StoreLocation (){
 
   return(
-<div className="container-fluid m-auto d-flex flex-column justify-content-center p-3">
+<div className="store-location-bg-container container-fluid m-auto d-flex flex-column justify-content-center p-3">
 <div className="d-flex flex-column flex-md-row m-5 p-3">
         
         <div className=" p-3 w-100 m-3">

@@ -66,7 +66,7 @@ export default function ControlledCarousel() {
     <>
 
  {
-  loading?<div className="loader"><TailSpin  color="#00BFFF" height={80} width={80} /></div>:
+  loading?<div className="loader"><TailSpin  color="#00BFFF" height={100} width={100} /></div>:
   <div className="offers-carousel carousel-center">
       <Carousel autoPlay={true} pause="hover" interval={2000}>
         {documents.map((image, idx) => (
