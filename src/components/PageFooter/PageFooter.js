@@ -17,7 +17,9 @@ export default function PageFooter (){
     FFTI Sports ,
     Dilsukhnagar,Hyderabad, Telangana
       <br></br>
-          
+      <br></br>
+      FFTI Sports Factory,
+    Tadipatri,Ananthapur Dist, Telangana
       <a  style={{color:"white"}} className="footer__btn" href="mailto:ffti650@gmail.com">Email Us</a>
     </address>
   </div>
@@ -68,7 +70,7 @@ export default function PageFooter (){
     <p>&copy; 2022. All rights reserved.</p>
     
     <div className="legal__links">
-      <span>Designed by <span className="heart">♥</span> Vishnu&Lokesh</span>
+      <span>Designed by <span className="heart">😎 </span> Vishnu&Lokesh</span>
     </div>
   </div>
 </footer>
