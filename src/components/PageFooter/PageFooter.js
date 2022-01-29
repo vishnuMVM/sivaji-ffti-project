@@ -19,7 +19,7 @@ export default function PageFooter (){
       <br></br>
       <br></br>
       FFTI Sports Factory,
-    Tadipatri,Ananthapur Dist, Telangana
+    Tadipatri,Ananthapur Dist, Andhra Pradesh
       <a  style={{color:"white"}} className="footer__btn" href="mailto:ffti650@gmail.com">Email Us</a>
     </address>
   </div>
@@ -47,21 +47,17 @@ export default function PageFooter (){
       </ul>
     </li>
     
-    <li className="nav__item">
-      <h3 className="nav__title">Designed by</h3>
-      
+    <li className="nav__item mt-3">
+     
+      <h3 className="nav__title">Developer Contact</h3>
       <ul className="nav__ul">
-        <li>
-          <a href="mailto:yvishnuvardhan325@gmail.com">yvishnuvardhan325@gmail.com</a>
+        <li style={{textDecoration:"underline",fontStyle:"italic"}}>
+          <a href="mailto:yvishnuvardhan325@gmail.com">Vishnu Vardhan</a>
         </li>
         
-        <li>
-          <a href="mailto:damalokeshskht@gmail.com">damalokeshskht@gmail.com</a>
+        <li style={{textDecoration:"underline",fontStyle:"italic"}}>
+          <a href="mailto:damalokeshskht@gmail.com">Dama Lokesh</a>
         </li>
-        
-        {/* <li>
-          <a href="#">Sitemap</a>
-        </li> */}
       </ul>
     </li>
   </ul>
@@ -70,7 +66,7 @@ export default function PageFooter (){
     <p>&copy; 2022. All rights reserved.</p>
     
     <div className="legal__links">
-      <span>Designed by <span className="heart">😎 </span> Vishnu&Lokesh</span>
+      <span>Developed by <span className="heart">😎</span> Vishnu&Lokesh</span>
     </div>
   </div>
 </footer>
