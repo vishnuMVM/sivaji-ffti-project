@@ -23,11 +23,14 @@ const Management=()=>{
                     
                         <div className="individual-icon-container">
                             <p className="individual-icon"><i class="fa fa-phone individual-icon" aria-hidden="true"></i></p>
-                            <p>9666614474, 7032014474</p>
+                            {/* <p>9666614474, 7032014474</p> */}
+                            {/* <a href="https://wa.me/9666614474"><p>9666614474</p></a>
+                                <span className="m-3"></span> */}
+                            <a href="https://wa.me/9666614474"><p>7032014474</p></a>
                         </div>
                         <div className="individual-icon-container">
-                            <p className="individual-icon"><i class="fa fa-whatsapp individual-icon" aria-hidden="true"></i></p>
-                            <p>9666614474</p>
+                            <p className="individual-icon"><i class="fab fa-whatsapp mr-2"></i></p>
+                            <a href="https://wa.me/9666614474"><p>9666614474</p></a>
                         </div>
                     </div>
                    </div>
@@ -55,12 +58,14 @@ const Management=()=>{
                        </div>
                     
                         <div className="individual-icon-container">
-                            <p className="individual-icon"><i class="fa fa-phone individual-icon" aria-hidden="true"></i></p>
-                            <p>9966499915</p>
+                            <p className="individual-icon"><i class="fab fa-whatsapp mr-3"></i></p>
+                            <a href="https://wa.me/9666614474"><p>9966499915</p></a>
+                            {/* <p>9966499915</p> */}
                         </div>
                         <div className="individual-icon-container">
                             <p className="individual-icon"><i class="fa fa-whatsapp individual-icon" aria-hidden="true"></i></p>
-                            <p>9966499915</p>
+                            {/* <a href="https://wa.me/9666614474"><p>9966499915</p></a> */}
+                            {/* <p>9966499915</p> */}
                         </div>
                     </div>
                    </div>
