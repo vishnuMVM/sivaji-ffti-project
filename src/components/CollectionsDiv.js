@@ -12,8 +12,8 @@ import {
 import "./Categories/ImagesGrid.css";
 import AddCollection from "./Categories/AddCollection";
 import { Link } from "react-router-dom";
-import { TailSpin } from  'react-loader-spinner'
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import { TailSpin } from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 export default function CollectionsDiv() {
   const [documents, setDocuments] = useState([]);
@@ -59,43 +59,50 @@ export default function CollectionsDiv() {
         };
         return (
           <>
-         {loading?<div className="loader"><TailSpin  color="#00BFFF" height={100} width={100} /></div>: <div>
-            <div className="center ">
-              <h2>Our Collections</h2>
-            </div>
+            {loading ? (
+              <div className="loader">
+                <TailSpin color="#00BFFF" height={100} width={100} />
+              </div>
+            ) : (
+              <div>
+                <div className="center ">
+                  <h2>Our Collections</h2>
+                </div>
 
-            <div className="collections center">
-              {documents &&
-                documents.map((doc) => {
-                  return (
-                    <Link
-                      key={doc.id}
-                      to={`/collection/${doc.name.replace(/\s+/g, "-")}`}
-                      onClick={() =>
-                        Onchangecollectionname(doc.name)
-                      }
-                      style={{textDecoration:"none"}}
-                    >
-                      <div className="collection-items">
-                        <img
-                          className="collection-img"
-                          src={doc.URL}
-                          alt="Shorts"
-                        ></img>
+                <div className="collections center">
+                  {documents &&
+                    documents.map((doc) => {
+                      return (
+                        <Link
+                          key={doc.id}
+                          to={`/collection/${doc.name.replace(/\s+/g, "-")}`}
+                          onClick={() => Onchangecollectionname(doc.name)}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <div className="collection-items">
+                            <div>
+                              <img
+                                className="collection-img"
+                                src={doc.URL}
+                                alt="Shorts"
+                              ></img>
+                            </div>
 
-                        {/* <div className="update-Details" style={{paddingTop : "20px" ,display:"flex", justifyContent:"space-evenly" , gap:"10px"}}>
+                            {/* <div className="update-Details" style={{paddingTop : "20px" ,display:"flex", justifyContent:"space-evenly" , gap:"10px"}}>
                          <input onChange={enterProductName} type="text" name="product-name"/>
                         <button> <i class="fas fa-trash"></i> delete</button>
                         <button> <i class="fas fa-edit"></i> edit </button>
                     </div> */}
-
-                        <h4 id="collection-name">{doc.name}</h4>
-                      </div>
-                    </Link>
-                  );
-                })}
-            </div>
-          </div>}
+                            <div>
+                              <h4 id="collection-name">{doc.name}</h4>
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                </div>
+              </div>
+            )}
           </>
         );
       }}
