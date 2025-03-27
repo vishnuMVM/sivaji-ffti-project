@@ -1,17 +1,17 @@
+import 'firebase/storage';
+import 'firebase/firestore';
+
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { useEffect, useState } from "react";
+
+// import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
+// import { getApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
 // import * as firebase from 'firebase/app';
 // import firebase from "firebase/app";
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
-import 'firebase/storage';
-import 'firebase/firestore';
-// import { getApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
 import { serverTimestamp } from "firebase/firestore";
-
-
-import { useEffect, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
