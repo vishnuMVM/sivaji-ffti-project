@@ -4,17 +4,19 @@ import { BrowserRouter, useLocation } from "react-router-dom";
 
 import RoutesComponent from './Routes/routes.jsx';
 import Sidebar from "./components/Sidebar/Sidebar";
+import { ThemeProvider } from "@material-tailwind/react";
+import { useState } from "react";
 
 function App() {
+  const [open, setOpen] = useState(true);
   const location = useLocation();
-  const hideSidebarRoutes = ["/admin"]; // Add routes where you don't want the sidebar
+  const hideSidebarRoutes = ["/admin"];
+  
 
   return (
-    <div style={{ display: "flex" }}>
-      {!hideSidebarRoutes.includes(location.pathname) && <Sidebar />}
-      <div style={{ flexGrow: 1 }}>
-        <RoutesComponent />
-      </div>
+    <div className='w-screen flex'>
+      {!hideSidebarRoutes.includes(location.pathname) && <Sidebar open={open} setOpen={setOpen} />}
+      <RoutesComponent isSidebarOpen={open} /> {/* Pass 'open' as 'isSidebarOpen' */}
     </div>
   );
 }
@@ -22,7 +24,9 @@ function App() {
 export default function AppWrapper() {
   return (
     <BrowserRouter>
+    <ThemeProvider>
       <App />
+    </ThemeProvider>
     </BrowserRouter>
   );
 }
