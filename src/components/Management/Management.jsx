@@ -16,13 +16,13 @@ const ManagementCard = ({ name, title, description, email, phone, whatsapp, imag
         onClick={() => whatsapp && window.open(`https://wa.me/${whatsapp}`, "_blank")} // Open WhatsApp on click
       />
       <div className="flex-1 text-center md:text-left">
-        <Typography variant="h5" color="blue-gray" className="mb-2 font-bold">
+        <Typography variant="h5"  className="mb-2 font-bold text-purple-800">
           {name}
         </Typography>
-        <Typography variant="subtitle1" className="mb-4 text-sm text-slate-600">
+        <Typography variant="subtitle1" className="mb-4 text-sm text-purple-600">
           {title}
         </Typography>
-        <Typography variant="body2" color="blue-gray" className="mb-6 italic">
+        <Typography variant="body2"  className="mb-6 italic">
           {description}
         </Typography>
         <div className="flex items-center justify-center md:justify-start gap-4">
@@ -91,7 +91,7 @@ const Management = () => {
   return (
     <div className=" w-full h-screen bg-blue-gray-50 dark:bg-gray-900 py-16">
       <div className="container mx-auto px-4">
-        <Typography variant="h2" color="blue-gray" className="text-center mb-12 font-extrabold dark:text-white">
+        <Typography variant="h2"  className="text-center mb-12 font-extrabold dark:text-white">
           Our Leadership Team
         </Typography>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">

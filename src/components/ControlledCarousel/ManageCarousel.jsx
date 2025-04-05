@@ -85,7 +85,7 @@ export default function ManageCarousel({ isSidebarOpen }) {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center w-full h-screen overflow-auto bg-gray-100`}
+      className={`flex flex-col items-center justify-center w-full h-screen overflow-auto`}
     >
       <CustomDialog
         open={showDialog}
@@ -164,18 +164,18 @@ export default function ManageCarousel({ isSidebarOpen }) {
           onClick={handleUpload}
           color="blue"
           disabled={!carouselImage || uploadingStatus}
-          className="w-full bg-amber-500 text-black"
+          className="w-full bg-purple-700 text-purple-50"
         >
           {uploadingStatus ? <Spinner className="h-5 w-5" /> : "Upload Image"}
         </Button>
       </div>
 
-      <div class="border-solid h-0.5 bg-slate-300 w-full m-3"> .</div>
+      <div class="border-solid h-0.5 bg-purple-500 w-full m-3"> .</div>
 
       <Typography variant="h5" color="blue-gray" className="font-bold mt-8">
         Manage The Existing Carousel Images Here
       </Typography>
-      <div className="w-full justify-center flex flex-wrap isolate items-center mt-8">
+      <div className="w-full justify-center flex flex-wrap isolate items-center mt-8 p-5 mb-5">
         {existingCarouselImages?.map((image, index) => (
           <div key={index} className="relative m-2">
             <img

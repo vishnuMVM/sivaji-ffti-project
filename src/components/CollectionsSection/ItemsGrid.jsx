@@ -1,4 +1,4 @@
-import { Card, IconButton, Tooltip, Typography } from "@material-tailwind/react";
+import { Card, Checkbox, IconButton, Typography } from "@material-tailwind/react";
 import {
   collection,
   deleteDoc,
@@ -27,16 +27,12 @@ const ItemsGridSkeleton = () => {
             <Card key={index} className="shadow-md animate-pulse">
               <div className="w-full h-48 rounded-t-md bg-gray-300 dark:bg-gray-700" />
               <div className="p-4 flex items-center justify-between">
-                <Tooltip content="Loading...">
                   <Typography variant="h6" className="truncate w-32">
                     <div className="w-24 h-4 bg-gray-300 dark:bg-gray-700 rounded" />
                   </Typography>
-                </Tooltip>
-                <Tooltip content="Loading...">
                   <IconButton size="sm" disabled>
                     <div className="h-5 w-5 bg-gray-300 dark:bg-gray-700 rounded-full" />
                   </IconButton>
-                </Tooltip>
               </div>
             </Card>
           ))}
@@ -46,21 +42,19 @@ const ItemsGridSkeleton = () => {
   );
 };
 
-const ItemsGrid = (props,) => {
+const ItemsGrid = (props) => {
   const [documents, setDocuments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(0);
   const currentUser = useAuth();
-  const navigate = useNavigate();
   const { collectionName } = useParams();
+  const [showAdminControls, setShowAdminControls] = useState(true);
 
   useEffect(() => {
-    
-    console.log(collectionName, "collectionName");
     const getData = async () => {
       setLoading(true);
       const db = getFirestore();
-      
+
       const colRef = collection(db, collectionName); // Use prop or route param
       const q = query(colRef, orderBy("createdAt", "desc"));
       try {
@@ -77,13 +71,15 @@ const ItemsGrid = (props,) => {
       }
     };
     getData();
-  }, []);
+  }, [collectionName]); // Make sure to include collectionName in the dependency array
 
   const onDeleteItem = async (id) => {
     const docRef = doc(db, collectionName, id);
     try {
       await deleteDoc(docRef);
       setCount((prev) => prev + 1);
+      // Optionally, you might want to refetch the data or update the documents state
+      // to reflect the deletion immediately.
     } catch (error) {
       console.error("Error deleting document:", error.message);
     }
@@ -94,7 +90,7 @@ const ItemsGrid = (props,) => {
     { name: "Collections", link: "/collections" },
     { name: collectionName, link: `/collection/${collectionName}` },
   ];
-console.log(documents,"documents");
+  const isAdmin = currentUser?.email?.length > 0;
 
   return (
     <div className="py-8 px-4 h-screen w-full overflow-auto">
@@ -104,36 +100,56 @@ console.log(documents,"documents");
           <ItemsGridSkeleton />
         ) : (
           <div className="p-5 mt-3 flex flex-col w-full hscreen overflow-auto">
-          <div className="flex justify-between items-center mb-4">
-          {currentUser && <ManageCollections name={collectionName} />}
-
+            <div className="flex justify-between items-center mb-4">
+              {currentUser && <ManageCollections name={collectionName} />}
+            </div>
+            <div className="flex justify-end items-center mb-4">
+        {isAdmin && (
+          <div className="flex items-center gap-2 m-2">
+            <Checkbox
+              defaultChecked
+              color="info"
+              id="show-admin-controls"
+              onChange={() => setShowAdminControls(!showAdminControls)}
+            >
+              <Checkbox.Indicator />
+            </Checkbox>
+            <Typography
+              as="label"
+              htmlFor="show-admin-controls"
+              className="cursor-pointer text-foreground"
+            >
+              Show Admin Controls
+            </Typography>
           </div>
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {documents?.map((doc) => (
-              <Card key={doc.id} className="shadow-md">
-                <img
-                  src={doc.URL}
-                  alt={collectionName}
-                  className="w-full h-48 object-cover rounded-t-md"
-                />
-                <div className="p-4 flex items-center justify-between">
-                  <Tooltip content={ collectionName}>
-                    <Typography variant="h6" className="truncate w-32">
-                      { collectionName}
-                    </Typography>
-                  </Tooltip>
-                  {currentUser && (
-                    <Tooltip content="Delete">
-                      <IconButton size="sm" color="red" onClick={() => onDeleteItem(doc.id)}>
-                        <TrashIcon className="h-5 w-5" />
-                      </IconButton>
-                    </Tooltip>
-                  )}
-                </div>
-              </Card>
-            ))}
-          </div>
-
+        )}
+      </div>
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+              {documents?.map((doc) => (
+                <Card key={doc.id} className="shadow-md">
+                  <img
+                    src={doc.URL}
+                    alt={collectionName}
+                    className="w-full h-48 object-cover rounded-t-md hover:scale-105"
+                  />
+                  <div className="p-4 flex items-center justify-between">
+                      <Typography variant="h6" className="truncate w-32">
+                        {collectionName}
+                      </Typography>
+                    {showAdminControls && (
+                        <IconButton
+                          size="sm"
+                          color="red"
+                          onClick={() => onDeleteItem(doc.id)}
+                        >
+                          <TrashIcon className="h-5 w-5 hover:text-red-600" />
+                        </IconButton>
+                    )}
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
         )}
       </div>

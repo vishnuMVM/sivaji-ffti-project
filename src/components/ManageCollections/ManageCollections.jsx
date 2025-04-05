@@ -159,14 +159,14 @@ export default function ManageCollections(props) {
   ));
 
   return (
-    <Card className="p-6 shadow-lg w-full overflow-auto">
+    <Card className="p-6 shadow-lg w-full overflow-auto bg-purple-100">
       <Typography variant="h5" color="blue-gray" className="mb-4">
-        Update {collectionNameToBeUpdated} Collection
+        Manage {collectionNameToBeUpdated} Collection
       </Typography>
 
       {!collectionName && (
-        <div className="mb-4">
-          <Typography variant="small" color="blue-gray" className="mb-2 font-medium">
+        <div className="mb-4 flex justify-end items-center gap-4 border-purple-300">
+          <Typography variant="small" color="blue-gray" className=" font-medium">
             Select Collection
           </Typography>
           <Select value={collectionNameToBeUpdated} onValueChange={(val)=>handleCollectionChange(val)}>
@@ -176,7 +176,7 @@ export default function ManageCollections(props) {
                 <Select.Option disabled>Loading Collections...</Select.Option>
               ) : categories.length > 0 ? (
                 categories.map((category) => (
-                  <Select.Option key={category.id} value={category.name}>
+                  <Select.Option className="hover:bg-purple-300" key={category.id} value={category.name}>
                     {category.name}
                   </Select.Option>
                 ))
@@ -190,7 +190,7 @@ export default function ManageCollections(props) {
 
       <div
         {...getRootProps()}
-        className={`border-2 border-dashed rounded-md p-6 text-center cursor-pointer ${
+        className={`border-2 border-dashed border-purple-600 rounded-md p-6 text-center cursor-pointer ${
           isDragActive ? "border-blue-500 bg-blue-gray-50" : "border-blue-gray-300 hover:bg-blue-gray-50"
         }`}
       >
@@ -201,7 +201,7 @@ export default function ManageCollections(props) {
             ? "Drop the images here..."
             : "Drag and drop images here or click to select"}
         </Typography>
-        <Typography variant="caption" color="blue-gray">
+        <Typography variant="caption" className="text-blue-purple-500">
           (Multiple image files are allowed)
         </Typography>
       </div>
@@ -209,7 +209,7 @@ export default function ManageCollections(props) {
       <div className="mt-4 flex flex-wrap gap-4">{imagePreviews}</div>
 
       <div className="mt-6">
-        <Button onClick={uploadMultipleImages} disabled={disableUploadButton}>
+        <Button className="bg-purple-700" onClick={uploadMultipleImages} disabled={disableUploadButton}>
           {isUploading ? "Uploading..." : "Upload Images"}
         </Button>
       </div>

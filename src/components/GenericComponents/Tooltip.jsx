@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Tooltip = ({ text, children, placement = "top", width = "w-60" }) => {
+const Tooltip = ({ text, children, placement = "top", width = "max-w-3xl" }) => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   const getTooltipPositionClasses = () => {

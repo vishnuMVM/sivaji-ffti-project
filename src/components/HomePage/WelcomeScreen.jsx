@@ -1,9 +1,10 @@
+// import { Link } from 'react-router-dom';
 // import React from 'react';
 // import WelcomeScreenPic from "../../assets/WelcomeScreenPic.jpg";
 
 // function WelcomeScreen() {
 //   return (
-//     <div className="relative h-screen w-screen overflow-hidden">
+//     <div className="relative h-screen w-full overflow-hidden">
 //       {/* Background Image with Opacity */}
 //       <div className="absolute inset-0">
 //         <div
@@ -19,12 +20,19 @@
 //       {/* Text and Button Overlay */}
 //       <div className="absolute inset-0 flex items-center justify-center">
 //         <div className="text-center">
-//           <h1 className="text-white text-6xl font-extrabold tracking-wide mb-6">
-//             Welcome
+//           <h1 className="text-white text-6xl font-extrabold tracking-wide mb-6" style={{ fontFamily: 'Dancing Script, cursive', fontWeight: 'normal' }}>
+//             Engineered for Your Edge
 //           </h1>
-//           <button className="bg-transparent border border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-black transition-colors duration-300">
-//             Shop
-//           </button>
+//           <h2 className="text-white text-4xl font-semibold tracking-wide mb-6" 
+//           style={{ fontFamily: 'Arizonia, cursive', fontWeight: 'normal' }}
+//           >
+//             FFTI Sportswear
+//           </h2>
+//           <Link to="/collections">
+//             <button className="bg-transparent border border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-black transition-colors duration-300">
+//               Shop
+//             </button>
+//           </Link>
 //         </div>
 //       </div>
 //     </div>
@@ -39,12 +47,10 @@ import WelcomeScreenPic from "../../assets/WelcomeScreenPic.jpg";
 
 function WelcomeScreen() {
   return (
-    <div className="relative h-screen w-screen overflow-hidden">
+    <div className="relative h-screen w-full overflow-hidden">
       {/* Background Image with Opacity */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-black opacity-50" // Adjust opacity as needed (0-100)
-        />
+        <div className="absolute inset-0 bg-black opacity-50" />
         <img
           src={WelcomeScreenPic}
           alt="Welcome Screen"
@@ -55,11 +61,34 @@ function WelcomeScreen() {
       {/* Text and Button Overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-white text-6xl font-extrabold tracking-wide mb-6">
-            Welcome
+          <h1
+            className="text-white text-6xl mb-6"
+            style={{
+              fontFamily: "'Great Vibes', cursive",
+              fontWeight: "normal",
+              letterSpacing: "2px",
+            }}
+          >
+            Engineered for Your Edge
           </h1>
+          <h2
+            className="text-white text-4xl mb-6"
+            style={{
+              fontFamily: "'Pacifico'",
+              fontWeight: "normal",
+              letterSpacing: "1px",
+            }}
+          >
+            FFTI Sportswear
+          </h2>
           <Link to="/collections">
-            <button className="bg-transparent border border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white hover:text-black transition-colors duration-300">
+            <button 
+               style={{
+              fontFamily: "'Pacifico'",
+              fontWeight: "normal",
+              letterSpacing: "1px",
+            }}
+            className="bg-transparent border border-purple-400 text-white font-semibold py-3 px-8 rounded-md hover:bg-purple-100 hover:text-purple-700 transition-colors duration-300">
               Shop
             </button>
           </Link>

@@ -15,11 +15,11 @@ const Sidebar = ({ open, setOpen }) => {
   const isAdmin = currentUser?.email?.length > 0;
 
   const menuItems = [
+    { name: "Collections", icon: <GiClothes className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/collections" },
     { name: "Achievements", icon: <GiAchievement className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/achievements" },
     { name: "Grow With Us", icon: <LuHandshake className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/grow-with-us" },
     { name: "Store Location", icon: <IoLocationSharp className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/store-location" },
     { name: "Management", icon: <GiTeamIdea className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/management" },
-    { name: "Collections", icon: <GiClothes className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/collections" },
 
   ];
 
@@ -39,7 +39,7 @@ const Sidebar = ({ open, setOpen }) => {
 
   return (
     <div className="flex z-50">
-      <div className={` ${open ? "w-72" : "w-20"} bg-black h-screen p-5 pt-8 relative duration-300 flex flex-col justify-between`}>
+      <div className={` ${open ? "w-72" : "w-20"} bg-purple-950 h-screen p-5 pt-8 relative duration-300 flex flex-col justify-between`}>
         <div className="relative">
           <div className={`bg-stone-900 text-black absolute cursor-pointer -right-4 top-9 w-7 rounded-full border-dark-purple ${open && "rotate-180"}`} onClick={() => { setOpen(!open); }}>
             <IoArrowForwardSharp className="text-stone-50 h-6 w-6" />
@@ -53,7 +53,7 @@ const Sidebar = ({ open, setOpen }) => {
 
           <ul className="pt-6">
             {menuItems.map((Menu, index) => (
-              <li key={index} className={`flex rounded-md p-1 cursor-pointer hover:bg-slate-300 hover:text-stone-950 text-gray-300 text-sm items-center gap-x-4 mt-2 mb-2 group relative ${open && "p-2 mb-1"} `}>
+              <li key={index} className={`flex rounded-md p-1 cursor-pointer hover:bg-purple-300 hover:text-stone-950 text-gray-300 text-sm items-center gap-x-4 mt-2 mb-2 group relative ${open && "p-2 mb-1"} `}>
                 <Link to={Menu.path} className="flex items-center w-full text-inherit hover:text-stone-950">
                   {React.cloneElement(Menu.icon, { className: `h-6 w-6 mr-3 group-hover:text-stone-950 ${!open && "h-8 w-8"}` })}
                   <span className={`${!open && "hidden"} origin-left duration-200`}>{Menu.name}</span>
@@ -68,7 +68,7 @@ const Sidebar = ({ open, setOpen }) => {
 
             {isAdmin &&
               adminMenuItems.map((Menu, index) => (
-                <li key={index} className={`flex rounded-md p-1 cursor-pointer hover:bg-slate-300 hover:text-stone-950 text-gray-300 text-sm items-center gap-x-4 mt-2 mb-2 group relative ${open && "p-2 mb-1"} `}>
+                <li key={index} className={`flex rounded-md p-1 cursor-pointer hover:bg-purple-300 hover:text-stone-950 text-gray-300 text-sm items-center gap-x-4 mt-2 mb-2 group relative ${open && "p-2 mb-1"} `}>
                   <Link to={Menu.path} className="flex items-center w-full text-inherit hover:text-stone-950">
                     {React.cloneElement(Menu.icon, { className: `h-6 w-6 mr-3 group-hover:text-stone-950 ${!open && "h-8 w-8"}` })}
                     <span className={`${!open && "hidden"} origin-left duration-200`}>{Menu.name}</span>

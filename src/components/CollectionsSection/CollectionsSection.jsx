@@ -57,7 +57,7 @@ export default function CollectionsSection({ isSidebarOpen:{isSidebarOpen} }) {
       </div>
     ) :  // If loading is true, show the spinner
     (<div className={`flex w-full h-screen transition-all duration-300`}>
-     <div className="flex-1 overflow-auto bg-gradient-to-br from-blue-50 to-indigo-100p-4">
+     <div className="flex-1 overflow-auto p-4">
         <ControlledCarousel  isSidebarOpen={isSidebarOpen}/>
         {/* <Spinner color="red"/> */}
         <section className="container mx-auto py-8">

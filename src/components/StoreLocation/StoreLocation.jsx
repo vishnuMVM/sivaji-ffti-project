@@ -26,7 +26,7 @@ Telangana, 500036`,
   ];
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 p-8 flex items-center justify-center">
+    <div className="min-h-screen w-full p-8 flex items-center justify-center">
       <div className="container mx-auto max-w-5xl">
         <Typography variant="h2" className="text-center mb-8 text-blue-800 font-bold">
           Our Locations
