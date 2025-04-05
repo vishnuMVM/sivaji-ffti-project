@@ -33,17 +33,17 @@ export default function ControlledCarousel({ isSidebarOpen }) {
   };
 
   return (
-    <div className={`flex justify-center mb-4 relative`}>
+    <div className={`flex flex-1 justify-center mb-4 relative max-h-screen`}>
       {loading ? (
-        <div className="text-center text-lg font-semibold">Loading...</div>
+        <div className="text-center text-lg flex justify-center font-semibold">Loading...</div>
       ) : (
         <div className="relative m-4 pt-10">
-          {images.length > 0 && (
+          {images?.length > 0 && (
             <div className="relative group mt-2 max-w-2xl">
               <img
                 src={images[currentIndex].URL}
                 alt={`Slide ${currentIndex}`}
-                className="rounded-lg shadow-lg object-cover"
+                className="rounded-lg shadow-lg max-w-lg max-h-lg"
               />
 
               {/* Previous Button */}

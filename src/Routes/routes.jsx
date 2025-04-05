@@ -1,29 +1,39 @@
 import { Route, Routes } from "react-router-dom";
+import { useContext, useState } from "react";
 
 import Achievements from "../components/Achievements/Achievements";
+import AddCollection from "../components/ManageCollections/AddCollection";
+import CollectionNameContext from "../components/CollectionsSection/CollectionNameContext";
 import CollectionsSection from "../components/CollectionsSection/CollectionsSection"; // Import CollectionsSection
 import ControlledCarousel from "../components/ControlledCarousel/ControlledCarousel";
 import GrowWithUs from "../components/GrowWithUs/GrowWithUs";
 import HomePage from "../components/HomePage/HomePage";
+import ItemsGrid from "../components/CollectionsSection/ItemsGrid";
 import Login from "../components/LoginScreen/Login";
 import ManageCarousel from "../components/ControlledCarousel/ManageCarousel";
+import ManageCollections from "../components/ManageCollections/ManageCollections";
+import Management from "../components/Management/Management";
 import StoreLocation from "../components/StoreLocation/StoreLocation";
+import WelcomeScreen from "../components/HomePage/WelcomeScreen";
 import { useAuth } from "../firebase/config";
 
 const RoutesComponent = ({ isSidebarOpen }) => { // Accept isSidebarOpen prop
   const currentUser = useAuth();
   const isAdmin = currentUser?.email?.length > 0;
+  const { collectionName, changeCollectionName } = useContext(CollectionNameContext);
 
   return (
     <Routes>
       <Route path="/admin" element={<Login />} />
-      <Route path="/" element={<HomePage isSidebarOpen={isSidebarOpen}/>} />
+      <Route path="/" element={<WelcomeScreen />} />
+      <Route path="/collections" element={<HomePage isSidebarOpen={isSidebarOpen} />} />
+      <Route path="/collection/:collectionName" element={<ItemsGrid isSidebarOpen={isSidebarOpen} />} />
       <Route path="/achievements" element={<Achievements />} />
       <Route path="/grow-with-us" element={<GrowWithUs isSidebarOpen={isSidebarOpen}/>} />
       <Route path="/store-location" element={<StoreLocation />} />
-      <Route path="/management" element={<div>Management Page</div>} />
-      <Route path="/admin/add-new-collection" element={<div>Add New Collection Page</div>} />
-      <Route path="/admin/manage-collections" element={<div>Manage Collections Page</div>} />
+      <Route path="/management" element={<Management />} />
+      <Route path="/admin/add-new-collection" element={<AddCollection /> } />
+      <Route path="/admin/manage-collections" element={<ManageCollections />} />
       <Route path="/admin/manage-carousel" element={<ManageCarousel isAdmin={isAdmin} isSidebarOpen={isSidebarOpen}/>} />
       <Route path="/collections" element={<CollectionsSection isSidebarOpen={isSidebarOpen} />} /> {/* Render CollectionsSection */}
     </Routes>

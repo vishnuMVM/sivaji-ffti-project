@@ -1,5 +1,5 @@
-import { Button, Card, Typography } from "@material-tailwind/react";
-import React, { useEffect, useState } from "react";
+import { Button, Card, Spinner, Typography } from "@material-tailwind/react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   collection,
   getDocs,
@@ -8,11 +8,14 @@ import {
   query,
 } from "firebase/firestore";
 
+import CollectionNameContext from './CollectionNameContext';
 import ControlledCarousel from "../ControlledCarousel/ControlledCarousel";
+import { Link } from "react-router-dom";
 import Tooltip from "../GenericComponents/ToolTip";
 import { db } from "../../firebase/config"; // Import your Firebase db instance
 
 export default function CollectionsSection({ isSidebarOpen:{isSidebarOpen} }) {
+  const { changeCollectionName } = useContext(CollectionNameContext);
   const [documents, setDocuments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sortOption, setSortOption] = useState("latest");
@@ -47,11 +50,19 @@ export default function CollectionsSection({ isSidebarOpen:{isSidebarOpen} }) {
 
 
   return (
-    <div className={`flex w-full h-screen transition-all duration-300`}>
+    loading ? (
+      <div className="flex items-center justify-center h-screen">
+        <Spinner className="h-16 w-16 " color="black" />
+        Loading....
+      </div>
+    ) :  // If loading is true, show the spinner
+    (<div className={`flex w-full h-screen transition-all duration-300`}>
      <div className="flex-1 overflow-auto bg-gradient-to-br from-blue-50 to-indigo-100p-4">
         <ControlledCarousel  isSidebarOpen={isSidebarOpen}/>
+        {/* <Spinner color="red"/> */}
         <section className="container mx-auto py-8">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-end items-center  mr-5 mb-6">
+          <Typography variant="h6" className="mr-2 ">Sort By : </Typography>
             <select
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value)}
@@ -61,9 +72,16 @@ export default function CollectionsSection({ isSidebarOpen:{isSidebarOpen} }) {
               <option value="name">Name</option>
             </select>
           </div>
+          <h1 className="text-2xl font-bold text-center mb-4">Available Collections</h1>  
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 m-5">
             {sortedCollections?.map((collection) => (
-              <Card key={collection.id} className="max-w-xs">
+              <Link 
+              className="text-slate-600 hover:text-slate-900"
+               key={collection?.id}
+               to={`/collection/${collection?.name.replace(/\s+/g, "-")}`}
+               onClick={() => changeCollectionName(collection?.name)}
+              >
+              <Card key={collection.id} className="max-w-xs hover:scale-110">
                 <img src={collection?.URL} alt={collection.name} className="w-full h-60 object-center rounded-t-lg" />
                 <div className="p-4 flex justify-between items-center">
                   <Tooltip text={collection?.name} placement="top">
@@ -71,15 +89,13 @@ export default function CollectionsSection({ isSidebarOpen:{isSidebarOpen} }) {
                       {collection?.name}
                     </Typography>
                   </Tooltip>
-                  <Button as="a" href={collection.URL} target="_blank">
-                    Explore
-                  </Button>
                 </div>
               </Card>
+              </Link>
             ))}
           </div>
         </section>
       </div>
-    </div>
+    </div>)
   );
 }
