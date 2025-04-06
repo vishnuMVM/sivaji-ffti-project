@@ -71,6 +71,11 @@ function WelcomeScreen() {
           >
             Engineered for Your Edge
           </h1>
+          <div className="flex justify-center items-center gap-4  mb-6">
+          <h2
+            className="text-white font-bold text-4xl mb-6"
+          
+          >FFTI </h2>
           <h2
             className="text-white text-4xl mb-6"
             style={{
@@ -79,8 +84,10 @@ function WelcomeScreen() {
               letterSpacing: "1px",
             }}
           >
-            FFTI Sportswear
+            Sportswear
           </h2>
+
+          </div>
           <Link to="/collections">
             <button 
                style={{
@@ -88,8 +95,8 @@ function WelcomeScreen() {
               fontWeight: "normal",
               letterSpacing: "1px",
             }}
-            className="bg-transparent border border-purple-400 text-white font-semibold py-3 px-8 rounded-md hover:bg-purple-100 hover:text-purple-700 transition-colors duration-300">
-              Shop
+            className="bg-purple-500 border border-purple-400 text-white font-semibold py-3 px-8 rounded-md hover:bg-purple-950 hover:text-slate-50 mt-2 transition-colors duration-300">
+              Explore
             </button>
           </Link>
         </div>

@@ -106,7 +106,7 @@ export default function AddCollection() {
   );
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="container bg-purple-200 mx-auto py-8">
       <Card className="p-8 shadow-lg">
         <Typography variant="h4" color="blue-gray" className="mb-4">
           Add New Collection
@@ -116,7 +116,7 @@ export default function AddCollection() {
           {({ getRootProps, getInputProps }) => (
             <div
               {...getRootProps()}
-              className="border-2 border-dashed border-blue-gray-300 rounded-md p-6 text-center cursor-pointer hover:bg-blue-gray-50"
+              className="border-2 border-dashed border-purple-400 rounded-md p-6 text-center cursor-pointer hover:bg-blue-gray-50"
             >
               <input {...getInputProps()} />
               <PhotoIcon className="h-10 w-10 mx-auto text-blue-gray-400 mb-2" />
@@ -136,17 +136,22 @@ export default function AddCollection() {
           <Input
             label="Category Name"
             type="text"
+            color="purple"
             required
+            placeholder="Enter category name"
+            className="justify-start w-48 border-2 border-purple-300 focus:border-purple-500"
             value={categoryName}
+            highlighted
+
             onChange={handleCategoryName}
           />
         </div>
 
         <div className="mt-6">
           <Button
-            className="w-full"
+            className="justify-end bg-purple-600"
             onClick={handleUpload}
-            disabled={loading}
+            disabled={loading || !categoryName}
           >
             {loading ? "Uploading..." : "Upload Image"}
           </Button>

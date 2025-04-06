@@ -6,6 +6,7 @@
 .pnp.js
 .gitignore
 src/components/firebase
+/dist
 
 # testing
 /coverage

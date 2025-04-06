@@ -2,31 +2,40 @@ import * as React from "react";
 
 import { GiAchievement, GiClothes, GiTeamIdea } from "react-icons/gi";
 import { IoArrowForwardSharp, IoLocationSharp } from "react-icons/io5";
+import { Link, useLocation } from "react-router-dom";
 import { TbCarouselHorizontal, TbCategory, TbCategoryPlus } from "react-icons/tb";
 import { logout, useAuth } from "../../firebase/config";
 
 import { BiLogOut } from "react-icons/bi";
-import { Link } from "react-router-dom";
 import Logo from "../Sidebar/Logo.jpg";
 import { LuHandshake } from "react-icons/lu";
 
 const Sidebar = ({ open, setOpen }) => {
   const currentUser = useAuth();
   const isAdmin = currentUser?.email?.length > 0;
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  // 🟣 Common reusable classes
+  const menuItemClasses =
+    "flex rounded-md cursor-pointer text-gray-300 text-sm items-center gap-x-4 group relative transition-all duration-200";
+  const iconClass = `h-6 w-6 mr-2 group-hover:text-stone-950`;
+  const tooltipClass =
+    "absolute left-12 bg-gray-800 text-white text-xs rounded p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200";
+  const activeMenuClasses = "bg-purple-300 text-stone-950";
 
   const menuItems = [
-    { name: "Collections", icon: <GiClothes className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/collections" },
-    { name: "Achievements", icon: <GiAchievement className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/achievements" },
-    { name: "Grow With Us", icon: <LuHandshake className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/grow-with-us" },
-    { name: "Store Location", icon: <IoLocationSharp className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/store-location" },
-    { name: "Management", icon: <GiTeamIdea className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/management" },
-
+    { name: "Collections", icon: <GiClothes />, path: "/collections" },
+    { name: "Achievements", icon: <GiAchievement />, path: "/achievements" },
+    { name: "Grow With Us", icon: <LuHandshake />, path: "/grow-with-us" },
+    { name: "Store Location", icon: <IoLocationSharp />, path: "/store-location" },
+    { name: "Management", icon: <GiTeamIdea />, path: "/management" },
   ];
 
   const adminMenuItems = [
-    { name: "Add New Collection", icon: <TbCategoryPlus className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/admin/add-new-collection" },
-    { name: "Manage Collections", icon: <TbCategory className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/admin/manage-collections" },
-    { name: "Manage Carousel", icon: <TbCarouselHorizontal className="h-6 w-6 mr-2 group-hover:text-stone-950" />, path: "/admin/manage-carousel" },
+    { name: "Add New Collection", icon: <TbCategoryPlus />, path: "/admin/add-new-collection" },
+    { name: "Manage Collections", icon: <TbCategory />, path: "/admin/manage-collections" },
+    { name: "Manage Carousel", icon: <TbCarouselHorizontal />, path: "/admin/manage-carousel" },
   ];
 
   const handleLogout = async () => {
@@ -37,62 +46,84 @@ const Sidebar = ({ open, setOpen }) => {
     }
   };
 
+  const renderMenuItem = (Menu) => {
+    const isActive = currentPath === Menu.path;
+    return (
+      <li
+        key={Menu.name}
+        className={`${menuItemClasses} ${open ? "p-2 mb-1" : "p-1 mb-2"} ${
+          isActive ? activeMenuClasses : "hover:bg-purple-300 hover:text-purple-950"
+        }`}
+      >
+        <Link to={Menu.path} className="flex items-center w-full text-inherit">
+          {React.cloneElement(Menu.icon, {
+            className: `${iconClass} ${!open ? "h-8 w-8" : ""}`,
+          })}
+          <span className={`${!open && "hidden"} origin-left duration-200`}>{Menu.name}</span>
+        </Link>
+        {!open && <div className={tooltipClass}>{Menu.name}</div>}
+      </li>
+    );
+  };
+
   return (
     <div className="flex z-50">
-      <div className={` ${open ? "w-72" : "w-20"} bg-purple-950 h-screen p-5 pt-8 relative duration-300 flex flex-col justify-between`}>
+      <div
+        className={`${
+          open ? "w-72" : "w-20"
+        } bg-purple-950 h-screen p-5 pt-8 relative duration-300 flex flex-col justify-between`}
+      >
+        {/* Sidebar Header */}
         <div className="relative">
-          <div className={`bg-stone-900 text-black absolute cursor-pointer -right-4 top-9 w-7 rounded-full border-dark-purple ${open && "rotate-180"}`} onClick={() => { setOpen(!open); }}>
+          <div
+            className={`bg-stone-900 text-black absolute cursor-pointer -right-4 top-9 w-7 rounded-full border-dark-purple ${
+              open && "rotate-180"
+            }`}
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
             <IoArrowForwardSharp className="text-stone-50 h-6 w-6" />
           </div>
-          <Link to='/'>
+
+          <Link to="/">
             <div className="flex gap-x-4 items-center">
-              <img src={Logo} className={`cursor-pointer duration-500 rounded-full w-10 h-10 ${open && "rotate-[360deg]"}`} alt="FFTI Logo" />
-              <h1 className={`text-white origin-left font-medium text-xl duration-200 ${!open && "scale-0"}`}>FFTI</h1>
+              <img
+                src={Logo}
+                className={`cursor-pointer duration-500 rounded-full w-10 h-10 ${
+                  open && "rotate-[360deg]"
+                }`}
+                alt="FFTI Logo"
+              />
+              <h1
+                className={`text-white origin-left font-medium text-xl duration-200 ${
+                  !open && "scale-0"
+                }`}
+              >
+                FFTI
+              </h1>
             </div>
           </Link>
 
+          {/* Menu Items */}
           <ul className="pt-6">
-            {menuItems.map((Menu, index) => (
-              <li key={index} className={`flex rounded-md p-1 cursor-pointer hover:bg-purple-300 hover:text-stone-950 text-gray-300 text-sm items-center gap-x-4 mt-2 mb-2 group relative ${open && "p-2 mb-1"} `}>
-                <Link to={Menu.path} className="flex items-center w-full text-inherit hover:text-stone-950">
-                  {React.cloneElement(Menu.icon, { className: `h-6 w-6 mr-3 group-hover:text-stone-950 ${!open && "h-8 w-8"}` })}
-                  <span className={`${!open && "hidden"} origin-left duration-200`}>{Menu.name}</span>
-                </Link>
-                {!open && (
-                  <div className="absolute left-12 bg-gray-800 text-white text-xs rounded p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:text-stone-950">
-                    {Menu.name}
-                  </div>
-                )}
-              </li>
-            ))}
-
-            {isAdmin &&
-              adminMenuItems.map((Menu, index) => (
-                <li key={index} className={`flex rounded-md p-1 cursor-pointer hover:bg-purple-300 hover:text-stone-950 text-gray-300 text-sm items-center gap-x-4 mt-2 mb-2 group relative ${open && "p-2 mb-1"} `}>
-                  <Link to={Menu.path} className="flex items-center w-full text-inherit hover:text-stone-950">
-                    {React.cloneElement(Menu.icon, { className: `h-6 w-6 mr-3 group-hover:text-stone-950 ${!open && "h-8 w-8"}` })}
-                    <span className={`${!open && "hidden"} origin-left duration-200`}>{Menu.name}</span>
-                  </Link>
-                  {!open && (
-                    <div className="absolute left-12 bg-gray-800 text-white text-xs rounded p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                      {Menu.name}
-                    </div>
-                  )}
-                </li>
-              ))}
+            {menuItems.map(renderMenuItem)}
+            {isAdmin && adminMenuItems.map(renderMenuItem)}
           </ul>
         </div>
 
+        {/* Logout */}
         <div className="mt-auto">
-         {isAdmin && <button onClick={handleLogout} className="flex items-center p-2 w-full text-left text-black hover:bg-red-600 hover:text-white rounded-md relative group">
-            <BiLogOut className={`h-6 w-6 mr-2 ${!open && "h-8 w-8"}`} />
-            <span className={`${!open && "hidden"} origin-left duration-200`}>Logout</span>
-            {!open && (
-              <div className="absolute left-12 bg-gray-800 text-white text-xs rounded p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                Logout
-              </div>
-            )}
-          </button>}
+          {isAdmin && (
+            <button
+              onClick={handleLogout}
+              className="flex items-center p-2 w-full text-left text-black hover:bg-red-600 hover:text-white rounded-md relative group"
+            >
+              <BiLogOut className={`h-6 w-6 mr-2 ${!open && "h-8 w-8"}`} />
+              <span className={`${!open && "hidden"} origin-left duration-200`}>Logout</span>
+              {!open && <div className={tooltipClass}>Logout</div>}
+            </button>
+          )}
         </div>
       </div>
     </div>
