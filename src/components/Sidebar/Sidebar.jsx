@@ -1,22 +1,24 @@
 import * as React from "react";
 
 import { GiAchievement, GiClothes, GiTeamIdea } from "react-icons/gi";
-import { IoArrowForwardSharp, IoLocationSharp } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import { TbCarouselHorizontal, TbCategory, TbCategoryPlus } from "react-icons/tb";
 import { logout, useAuth } from "../../firebase/config";
 
 import { BiLogOut } from "react-icons/bi";
+import { IoLocationSharp } from "react-icons/io5";
 import Logo from "../Sidebar/Logo.jpg";
 import { LuHandshake } from "react-icons/lu";
 
-const Sidebar = ({ open, setOpen }) => {
+const Sidebar = () => {
   const currentUser = useAuth();
   const isAdmin = currentUser?.email?.length > 0;
   const location = useLocation();
   const currentPath = location.pathname;
 
-  // 🟣 Common reusable classes
+  const [hovered, setHovered] = React.useState(false);
+
+  // Common classes
   const menuItemClasses =
     "flex rounded-md cursor-pointer text-gray-300 text-sm items-center gap-x-4 group relative transition-all duration-200";
   const iconClass = `h-6 w-6 mr-2 group-hover:text-stone-950`;
@@ -51,17 +53,17 @@ const Sidebar = ({ open, setOpen }) => {
     return (
       <li
         key={Menu.name}
-        className={`${menuItemClasses} ${open ? "p-2 mb-1" : "p-1 mb-2"} ${
+        className={`${menuItemClasses} ${hovered ? "p-2 mb-1" : "p-1 mb-2"} ${
           isActive ? activeMenuClasses : "hover:bg-purple-300 hover:text-purple-950"
         }`}
       >
         <Link to={Menu.path} className="flex items-center w-full text-inherit">
           {React.cloneElement(Menu.icon, {
-            className: `${iconClass} ${!open ? "h-8 w-8" : ""}`,
+            className: `${iconClass} ${!hovered ? "h-8 w-8" : ""}`,
           })}
-          <span className={`${!open && "hidden"} origin-left duration-200`}>{Menu.name}</span>
+          <span className={`${!hovered && "hidden"} origin-left duration-200`}>{Menu.name}</span>
         </Link>
-        {!open && <div className={tooltipClass}>{Menu.name}</div>}
+        {!hovered && <div className={tooltipClass}>{Menu.name}</div>}
       </li>
     );
   };
@@ -69,35 +71,26 @@ const Sidebar = ({ open, setOpen }) => {
   return (
     <div className="flex z-50">
       <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         className={`${
-          open ? "w-72" : "w-20"
+          hovered ? "w-72" : "w-20"
         } bg-purple-950 h-screen p-5 pt-8 relative duration-300 flex flex-col justify-between`}
       >
         {/* Sidebar Header */}
         <div className="relative">
-          <div
-            className={`bg-stone-900 text-black absolute cursor-pointer -right-4 top-9 w-7 rounded-full border-dark-purple ${
-              open && "rotate-180"
-            }`}
-            onClick={() => {
-              setOpen(!open);
-            }}
-          >
-            <IoArrowForwardSharp className="text-stone-50 h-6 w-6" />
-          </div>
-
           <Link to="/">
             <div className="flex gap-x-4 items-center">
               <img
                 src={Logo}
                 className={`cursor-pointer duration-500 rounded-full w-10 h-10 ${
-                  open && "rotate-[360deg]"
+                  hovered && "rotate-[360deg]"
                 }`}
                 alt="FFTI Logo"
               />
               <h1
                 className={`text-white origin-left font-medium text-xl duration-200 ${
-                  !open && "scale-0"
+                  !hovered && "scale-0"
                 }`}
               >
                 FFTI
@@ -119,9 +112,9 @@ const Sidebar = ({ open, setOpen }) => {
               onClick={handleLogout}
               className="flex items-center p-2 w-full text-left text-black hover:bg-red-600 hover:text-white rounded-md relative group"
             >
-              <BiLogOut className={`h-6 w-6 mr-2 ${!open && "h-8 w-8"}`} />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>Logout</span>
-              {!open && <div className={tooltipClass}>Logout</div>}
+              <BiLogOut className={`h-6 w-6 mr-2 ${!hovered && "h-8 w-8"}`} />
+              <span className={`${!hovered && "hidden"} origin-left duration-200`}>Logout</span>
+              {!hovered && <div className={tooltipClass}>Logout</div>}
             </button>
           )}
         </div>

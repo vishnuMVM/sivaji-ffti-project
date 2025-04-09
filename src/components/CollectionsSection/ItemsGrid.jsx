@@ -131,13 +131,13 @@ const ItemsGrid = (props) => {
                   <img
                     src={doc.URL}
                     alt={collectionName}
-                    className="w-full h-48 object-cover rounded-t-md hover:scale-105"
+                    className="w-full h-48 object-contain rounded-t-md hover:scale-105"
                   />
                   <div className="p-4 flex items-center justify-between">
-                      <Typography variant="h6" className="truncate w-32">
+                      <Typography variant="h6" className="truncate w-72">
                         {collectionName}
                       </Typography>
-                    {showAdminControls && (
+                    {!showAdminControls && (
                         <IconButton
                           size="sm"
                           color="red"
