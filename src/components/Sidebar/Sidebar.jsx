@@ -6,6 +6,7 @@ import { TbCarouselHorizontal, TbCategory, TbCategoryPlus } from "react-icons/tb
 import { logout, useAuth } from "../../firebase/config";
 
 import { BiLogOut } from "react-icons/bi";
+import { GiBasketballJersey } from "react-icons/gi";
 import { IoLocationSharp } from "react-icons/io5";
 import Logo from "../Sidebar/Logo.jpg";
 import { LuHandshake } from "react-icons/lu";
@@ -32,6 +33,7 @@ const Sidebar = () => {
     { name: "Grow With Us", icon: <LuHandshake />, path: "/grow-with-us" },
     { name: "Store Location", icon: <IoLocationSharp />, path: "/store-location" },
     { name: "Management", icon: <GiTeamIdea />, path: "/management" },
+    { name: "Order Jersey", icon: <GiBasketballJersey />, path: "/order-your-jersey" },
   ];
 
   const adminMenuItems = [
