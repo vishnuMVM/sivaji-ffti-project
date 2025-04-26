@@ -419,7 +419,7 @@ const OrderForm = () => {
           onChange={() => setIsFormHidden((prev) => !prev)}
         />
           <Typography as="label" htmlFor="hide-form-switch" className="cursor-pointer text-black">
-          {isFormHidden ? "Show Form" : "Hide Form"}
+          {!isFormHidden ? "Show Form" : "Hide Form"}
         </Typography>
       </div>
 
