@@ -52,7 +52,7 @@ function WelcomeScreen() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-black opacity-50" />
         <img
-          src={WelcomeScreenPic}
+          src="https://res.cloudinary.com/lokesh-webdev/image/upload/v1745682465/Mural%20Arts/WelcomeScreenPic_rmdwbp.jpg"
           alt="Welcome Screen"
           className="object-cover w-full h-full"
         />
